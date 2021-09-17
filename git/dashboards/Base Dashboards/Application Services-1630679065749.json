@@ -1,0 +1,2147 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_SERVICENOW-OPTIMIZ-PLUGIN",
+      "label": "servicenow-optimiz-plugin",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "servicenow-optimiz-plugin",
+      "pluginName": "servicenow-optimiz-plugin"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "8.1.2"
+    },
+    {
+      "type": "datasource",
+      "id": "servicenow-optimiz-plugin",
+      "name": "servicenow-optimiz-plugin",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "state-timeline",
+      "name": "State timeline",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1630679062027,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "panels": [],
+      "title": "Summary",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#5865f2",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#fee75c",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "OK"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 5,
+        "x": 0,
+        "y": 1
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "aggregateColumn": "sys_id",
+          "depends_on_toggle": "$dependsOnFilter",
+          "groupBy": "used_for",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedAggregateType": {
+            "label": "COUNT",
+            "value": "COUNT"
+          },
+          "selectedQueryCategory": {
+            "description": "Group by and apply aggregate functions to table data",
+            "label": "Aggregate",
+            "value": "Aggregate"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "operational_status=1",
+          "tableName": {
+            "label": "Mapped Application Service (cmdb_ci_service_discovered)",
+            "value": "cmdb_ci_service_discovered"
+          }
+        }
+      ],
+      "transformations": [],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#5865f2",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Noise Reduction Percentage"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#fee75c",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Total Events"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Total Correlated Alerts"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 9,
+        "x": 5,
+        "y": 1
+      },
+      "id": 19,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "aggregateColumn": "event_count",
+          "depends_on_toggle": "$dependsOnFilter",
+          "groupBy": "state",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedAggregateType": {
+            "label": "SUM",
+            "value": "SUM"
+          },
+          "selectedQueryCategory": {
+            "description": "Group by and apply aggregate functions to table data",
+            "label": "Aggregate",
+            "value": "Aggregate"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "sys_created_on>=javascript:gs.beginningOfLast30Days()^cmdb_ci.nameLIKE$nameSearch",
+          "tableName": {
+            "label": "Alert (em_alert)",
+            "value": "em_alert"
+          }
+        },
+        {
+          "depends_on_toggle": "$dependsOnFilter",
+          "hide": false,
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "B",
+          "selectedQueryCategory": {
+            "description": "Get row count from query",
+            "label": "Row Count",
+            "value": "Row_Count"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "sys_created_on>=javascript:gs.beginningOfLast30Days()^group_source!=5^cmdb_ci.nameLIKE$nameSearch",
+          "tableName": {
+            "label": "Alert (em_alert)",
+            "value": "em_alert"
+          }
+        }
+      ],
+      "title": "Overall Noise Reduction Last 30 Days",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "sum"
+            ]
+          }
+        },
+        {
+          "id": "concatenate",
+          "options": {}
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "state": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "SUM": "em_event"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Difference",
+            "binary": {
+              "left": "em_event",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "em_alert"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Noise Reduction Percentage",
+            "binary": {
+              "left": "Difference",
+              "operator": "/",
+              "reducer": "sum",
+              "right": "em_event"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Difference": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "em_alert": "Total Correlated Alerts",
+              "em_event": "Total Events"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#57f287",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 14,
+        "y": 1
+      },
+      "id": 21,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "depends_on_toggle": "$dependsOnFilter",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedQueryCategory": {
+            "description": "Get row count from query",
+            "label": "Row Count",
+            "value": "Row_Count"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "sys_created_on>=javascript:gs.beginningOfLast30Days()^cmdb_ci.nameLIKE$nameSearch",
+          "tableName": {
+            "label": "Incident (incident)",
+            "value": "incident"
+          }
+        }
+      ],
+      "title": "Incidents Last 30 Days",
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#5865f2",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisLabel": "Total Alerts",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 70,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 1,
+            "scaleDistribution": {
+              "log": 2,
+              "type": "log"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 19,
+        "x": 5,
+        "y": 5
+      },
+      "id": 23,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "selectedQueryCategory": {
+            "description": "Get timeseries data based on a time trend",
+            "label": "Trend Data",
+            "value": "Trend_Data"
+          },
+          "selectedTrendBy": {
+            "label": "Minute",
+            "value": "minute"
+          },
+          "selectedTrendColumn": {
+            "label": "Created",
+            "value": "sys_created_on"
+          },
+          "sysparam_count": 0,
+          "sysparam_option1": [
+            null
+          ],
+          "sysparam_option2": [
+            null
+          ],
+          "sysparam_option3": [
+            null
+          ],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "tableName": {
+            "description": "em_alert",
+            "label": "Alert",
+            "value": "em_alert"
+          },
+          "trendPeriod": "1"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {}
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#ed4245",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#fee75c",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "OK"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 1,
+        "x": 0,
+        "y": 6
+      },
+      "id": 13,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "aggregateColumn": "sys_id",
+          "depends_on_toggle": "$dependsOnFilter",
+          "groupBy": "severity",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedAggregateType": {
+            "label": "COUNT",
+            "value": "COUNT"
+          },
+          "selectedQueryCategory": {
+            "description": "Group by and apply aggregate functions to table data",
+            "label": "Aggregate",
+            "value": "Aggregate"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "operational_status=1^severity=1",
+          "tableName": {
+            "label": "Mapped Application Service (cmdb_ci_service_discovered)",
+            "value": "cmdb_ci_service_discovered"
+          }
+        }
+      ],
+      "transformations": [],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-orange",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#fee75c",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "OK"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 1,
+        "x": 1,
+        "y": 6
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "aggregateColumn": "sys_id",
+          "depends_on_toggle": "$dependsOnFilter",
+          "groupBy": "severity",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedAggregateType": {
+            "label": "COUNT",
+            "value": "COUNT"
+          },
+          "selectedQueryCategory": {
+            "description": "Group by and apply aggregate functions to table data",
+            "label": "Aggregate",
+            "value": "Aggregate"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "operational_status=1^severity=2",
+          "tableName": {
+            "label": "Mapped Application Service (cmdb_ci_service_discovered)",
+            "value": "cmdb_ci_service_discovered"
+          }
+        }
+      ],
+      "transformations": [],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#fee75c",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#fee75c",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 1,
+        "x": 2,
+        "y": 6
+      },
+      "id": 15,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "aggregateColumn": "sys_id",
+          "depends_on_toggle": "$dependsOnFilter",
+          "groupBy": "severity",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedAggregateType": {
+            "label": "COUNT",
+            "value": "COUNT"
+          },
+          "selectedQueryCategory": {
+            "description": "Group by and apply aggregate functions to table data",
+            "label": "Aggregate",
+            "value": "Aggregate"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "operational_status=1^severity=3",
+          "tableName": {
+            "label": "Mapped Application Service (cmdb_ci_service_discovered)",
+            "value": "cmdb_ci_service_discovered"
+          }
+        }
+      ],
+      "transformations": [],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-blue",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#fee75c",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 1,
+        "x": 3,
+        "y": 6
+      },
+      "id": 16,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "aggregateColumn": "sys_id",
+          "depends_on_toggle": "$dependsOnFilter",
+          "groupBy": "severity",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedAggregateType": {
+            "label": "COUNT",
+            "value": "COUNT"
+          },
+          "selectedQueryCategory": {
+            "description": "Group by and apply aggregate functions to table data",
+            "label": "Aggregate",
+            "value": "Aggregate"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "operational_status=1^severity=4",
+          "tableName": {
+            "label": "Mapped Application Service (cmdb_ci_service_discovered)",
+            "value": "cmdb_ci_service_discovered"
+          }
+        }
+      ],
+      "transformations": [],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#57f287",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#fee75c",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 1,
+        "x": 4,
+        "y": 6
+      },
+      "id": 17,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "aggregateColumn": "sys_id",
+          "depends_on_toggle": "$dependsOnFilter",
+          "groupBy": "severity",
+          "metricName": "$metricName",
+          "metricType": "$metricType",
+          "refId": "A",
+          "selectedAggregateType": {
+            "label": "COUNT",
+            "value": "COUNT"
+          },
+          "selectedQueryCategory": {
+            "description": "Group by and apply aggregate functions to table data",
+            "label": "Aggregate",
+            "value": "Aggregate"
+          },
+          "service": "$service",
+          "source": "$source",
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "sysparam_query": "operational_status=1^severity=5",
+          "tableName": {
+            "label": "Mapped Application Service (cmdb_ci_service_discovered)",
+            "value": "cmdb_ci_service_discovered"
+          }
+        }
+      ],
+      "transformations": [],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 12,
+      "panels": [],
+      "title": "Active Application Services",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "filterable": true,
+            "width": 40
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#57f287",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+            "properties": [
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": true,
+                    "title": "Details",
+                    "url": "/d/1OXnxvinx?orgId=1&var-service=${__data.fields.sys_id}"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 376
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "severity"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 98
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-background-solid"
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "Critical": {
+                        "color": "dark-red",
+                        "index": 4
+                      },
+                      "Major": {
+                        "color": "semi-dark-orange",
+                        "index": 3
+                      },
+                      "Minor": {
+                        "color": "#fee75c",
+                        "index": 2
+                      },
+                      "OK": {
+                        "color": "#57f287",
+                        "index": 0
+                      },
+                      "Warning": {
+                        "color": "#5865f2",
+                        "index": 1
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "layer"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 239
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "source"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 127
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sys_class_name"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 239
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "operational_status"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 152
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "used_for"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 114
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "service_classification"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 170
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#5865f2",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-background-solid"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "busines_criticality"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 156
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "type"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 165
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#fee75c",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-text"
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "install_status"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 125
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sys_updated_on"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 171
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "owned_by"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 153
+              },
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 2,
+      "options": {
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "hide": false,
+          "refId": "A",
+          "selectedQueryCategory": {
+            "description": "Choose your own table to gather data from",
+            "label": "Table",
+            "value": "Table"
+          },
+          "sortBy": {
+            "description": "name",
+            "label": "Name",
+            "value": "name"
+          },
+          "sysparam_count": 4,
+          "sysparam_option1": [
+            {
+              "description": "operational_status",
+              "label": "Operational status",
+              "value": "operational_status"
+            },
+            {
+              "description": "busines_criticality",
+              "label": "Business criticality",
+              "value": "busines_criticality"
+            },
+            {
+              "description": "severity",
+              "label": "Severity",
+              "value": "severity"
+            },
+            {
+              "description": "type",
+              "label": "Service Type",
+              "value": "type"
+            },
+            {
+              "description": "name",
+              "label": "Name",
+              "value": "name"
+            }
+          ],
+          "sysparam_option2": [
+            {
+              "label": "is",
+              "value": "="
+            },
+            {
+              "label": "is one of",
+              "value": "IN"
+            },
+            {
+              "label": "is one of",
+              "value": "IN"
+            },
+            {
+              "label": "is one of",
+              "value": "IN"
+            },
+            {
+              "label": "contains",
+              "value": "LIKE"
+            }
+          ],
+          "sysparam_option3": [
+            {
+              "label": "1",
+              "value": "1"
+            },
+            {
+              "label": "$business_criticality",
+              "value": "$business_criticality"
+            },
+            {
+              "label": "$severity",
+              "value": "$severity"
+            },
+            {
+              "label": "$type",
+              "value": "$type"
+            },
+            {
+              "label": "$nameSearch",
+              "value": "$nameSearch"
+            }
+          ],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            },
+            {
+              "label": "AND",
+              "value": "^"
+            },
+            {
+              "label": "AND",
+              "value": "^"
+            },
+            {
+              "label": "AND",
+              "value": "^"
+            },
+            {
+              "label": "AND",
+              "value": "^"
+            }
+          ],
+          "tableName": {
+            "description": "cmdb_ci_service_discovered",
+            "label": "Mapped Application Service",
+            "value": "cmdb_ci_service_discovered"
+          }
+        }
+      ],
+      "title": "Operational Services",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "aliases": true,
+              "asset": true,
+              "asset_tag": true,
+              "assigned": true,
+              "assigned_to": true,
+              "assignment_group": true,
+              "attestation_score": true,
+              "attested": true,
+              "attested_by": true,
+              "attested_date": true,
+              "attributes": true,
+              "bucket": true,
+              "business_contact": true,
+              "business_need": true,
+              "business_relation_manager": true,
+              "can_print": true,
+              "category": true,
+              "change_control": true,
+              "checked_in": true,
+              "checked_out": true,
+              "comments": true,
+              "company": true,
+              "compatibility_dependencies": true,
+              "consumer_type": true,
+              "correlation_id": true,
+              "cost": true,
+              "cost_cc": true,
+              "cost_center": true,
+              "delivery_date": true,
+              "delivery_manager": true,
+              "department": true,
+              "discovery_source": true,
+              "discovery_status": true,
+              "dns_domain": true,
+              "due": true,
+              "due_in": true,
+              "duplicate_of": true,
+              "end_date": true,
+              "environment": true,
+              "fault_count": true,
+              "first_discovered": true,
+              "fqdn": true,
+              "gl_account": true,
+              "hide_from_dashboard": true,
+              "install_date": true,
+              "invoice_number": true,
+              "ip_address": true,
+              "is_acc_monitored": true,
+              "justification": true,
+              "last_discovered": true,
+              "last_review_date": true,
+              "lease_id": true,
+              "life_cycle_stage": true,
+              "life_cycle_stage_status": true,
+              "location": true,
+              "mac_address": true,
+              "maintenance_schedule": true,
+              "managed_by": true,
+              "managed_by_group": true,
+              "manufacturer": true,
+              "model_id": true,
+              "model_number": true,
+              "monitor": true,
+              "monitoring_requirements": true,
+              "number": true,
+              "order_date": true,
+              "owned_by": false,
+              "parent": true,
+              "po_number": true,
+              "portfolio_status": true,
+              "prerequisites": true,
+              "price_model": true,
+              "price_unit": true,
+              "priority": true,
+              "process_status": true,
+              "purchase_date": true,
+              "schedule": true,
+              "serial_number": true,
+              "service_level_requirement": true,
+              "service_owner_delegate": true,
+              "service_status": true,
+              "short_description": true,
+              "skip_sync": true,
+              "sla": true,
+              "spm_service_portfolio": true,
+              "spm_taxonomy_node": true,
+              "stakeholders": true,
+              "start_date": true,
+              "subcategory": true,
+              "support_group": true,
+              "supported_by": true,
+              "sys_class_path": true,
+              "sys_created_by": true,
+              "sys_created_on": true,
+              "sys_domain": true,
+              "sys_domain_path": true,
+              "sys_id": false,
+              "sys_mod_count": true,
+              "sys_updated_by": true,
+              "sys_updated_on": false,
+              "unit_description": true,
+              "unverified": true,
+              "user_group": true,
+              "vendor": true,
+              "version": true,
+              "view_map": true,
+              "view_service": true,
+              "warranty_expiration": true,
+              "work_notes": true
+            },
+            "indexByName": {
+              "aliases": 13,
+              "asset": 14,
+              "asset_tag": 15,
+              "assigned": 16,
+              "assigned_to": 17,
+              "assignment_group": 18,
+              "attestation_score": 19,
+              "attested": 20,
+              "attested_by": 21,
+              "attested_date": 22,
+              "attributes": 23,
+              "bucket": 24,
+              "busines_criticality": 4,
+              "business_contact": 25,
+              "business_need": 26,
+              "business_relation_manager": 27,
+              "can_print": 28,
+              "category": 29,
+              "change_control": 30,
+              "checked_in": 31,
+              "checked_out": 32,
+              "comments": 33,
+              "company": 34,
+              "compatibility_dependencies": 35,
+              "consumer_type": 36,
+              "correlation_id": 37,
+              "cost": 38,
+              "cost_cc": 39,
+              "cost_center": 40,
+              "delivery_date": 41,
+              "delivery_manager": 42,
+              "department": 43,
+              "discovery_source": 45,
+              "discovery_status": 46,
+              "dns_domain": 47,
+              "due": 48,
+              "due_in": 49,
+              "duplicate_of": 50,
+              "end_date": 51,
+              "environment": 8,
+              "fault_count": 52,
+              "first_discovered": 44,
+              "fqdn": 53,
+              "gl_account": 54,
+              "hide_from_dashboard": 55,
+              "install_date": 56,
+              "install_status": 58,
+              "invoice_number": 59,
+              "ip_address": 60,
+              "is_acc_monitored": 61,
+              "justification": 62,
+              "last_discovered": 1,
+              "last_review_date": 63,
+              "layer": 64,
+              "lease_id": 65,
+              "life_cycle_stage": 66,
+              "life_cycle_stage_status": 67,
+              "location": 68,
+              "mac_address": 69,
+              "maintenance_schedule": 70,
+              "managed_by": 71,
+              "managed_by_group": 72,
+              "manufacturer": 73,
+              "model_id": 74,
+              "model_number": 75,
+              "monitor": 76,
+              "monitoring_requirements": 77,
+              "name": 6,
+              "number": 12,
+              "operational_status": 11,
+              "order_date": 78,
+              "owned_by": 9,
+              "parent": 79,
+              "po_number": 81,
+              "portfolio_status": 80,
+              "prerequisites": 82,
+              "price_model": 83,
+              "price_unit": 84,
+              "priority": 7,
+              "process_status": 85,
+              "purchase_date": 86,
+              "schedule": 87,
+              "serial_number": 88,
+              "service_classification": 2,
+              "service_level_requirement": 89,
+              "service_owner_delegate": 90,
+              "service_status": 91,
+              "severity": 5,
+              "short_description": 92,
+              "skip_sync": 93,
+              "sla": 94,
+              "source": 95,
+              "spm_service_portfolio": 96,
+              "spm_taxonomy_node": 97,
+              "stakeholders": 98,
+              "start_date": 99,
+              "subcategory": 100,
+              "support_group": 102,
+              "supported_by": 101,
+              "sys_class_name": 57,
+              "sys_class_path": 103,
+              "sys_created_by": 104,
+              "sys_created_on": 105,
+              "sys_domain": 106,
+              "sys_domain_path": 107,
+              "sys_id": 122,
+              "sys_mod_count": 108,
+              "sys_updated_by": 109,
+              "sys_updated_on": 0,
+              "traffic_discovery": 110,
+              "type": 10,
+              "u_url": 120,
+              "unit_description": 111,
+              "unverified": 112,
+              "used_for": 3,
+              "user_group": 113,
+              "vendor": 114,
+              "version": 115,
+              "view_map": 116,
+              "view_service": 117,
+              "warranty_expiration": 118,
+              "work_notes": 119,
+              "x_44522_sysstatsv2_service_details": 121
+            },
+            "renameByName": {
+              "sys_id": ""
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "fillOpacity": 64,
+            "lineWidth": 1
+          },
+          "mappings": [
+            {
+              "options": {
+                "Degradation": {
+                  "color": "#fee75c",
+                  "index": 1
+                },
+                "Operational": {
+                  "color": "#57f287",
+                  "index": 0
+                },
+                "Outage": {
+                  "color": "#ed4245",
+                  "index": 3
+                },
+                "Planned Outage": {
+                  "color": "#eb459e",
+                  "index": 2
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 26,
+      "options": {
+        "alignValue": "left",
+        "legend": {
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "mergeValues": true,
+        "rowHeight": 0.8,
+        "showValue": "never",
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "selectedQueryCategory": {
+            "description": "Gathers business service status over the last 90 days",
+            "label": "Outage Status",
+            "value": "Outage_Status"
+          },
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "title": "Service Availability",
+      "transparent": true,
+      "type": "state-timeline"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "Degradation": {
+                  "color": "#fee75c",
+                  "index": 1
+                },
+                "Operational": {
+                  "color": "#57f287",
+                  "index": 0
+                },
+                "Outage": {
+                  "color": "#ed4245",
+                  "index": 3
+                },
+                "Planned Outage": {
+                  "color": "#eb459e",
+                  "index": 2
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "uptimePercentage"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 33
+      },
+      "id": 25,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.2",
+      "targets": [
+        {
+          "refId": "A",
+          "selectedQueryCategory": {
+            "description": "Gathers business service status over the last 90 days",
+            "label": "Outage Status",
+            "value": "Outage_Status"
+          },
+          "showPercent": true,
+          "sysparam_count": 0,
+          "sysparam_option1": [],
+          "sysparam_option2": [],
+          "sysparam_option3": [],
+          "sysparam_option4": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "title": "Service Availability Percentage",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "datapoints": true
+            },
+            "indexByName": {},
+            "renameByName": {}
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 30,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": "",
+          "value": ""
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "label": "name",
+        "name": "nameSearch",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Business Priority",
+        "multi": true,
+        "name": "business_criticality",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "1 - most critical",
+            "value": "1 - most critical"
+          },
+          {
+            "selected": false,
+            "text": "2 - somewhat critical",
+            "value": "2 - somewhat critical"
+          },
+          {
+            "selected": false,
+            "text": "3 - less critical",
+            "value": "3 - less critical"
+          },
+          {
+            "selected": false,
+            "text": "4 - not critical",
+            "value": "4 - not critical"
+          }
+        ],
+        "query": "1 - most critical,2 - somewhat critical,3 - less critical,4 - not critical",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Alert Severity",
+        "multi": true,
+        "name": "severity",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "OK",
+            "value": "5"
+          },
+          {
+            "selected": false,
+            "text": "Warning",
+            "value": "4"
+          },
+          {
+            "selected": false,
+            "text": "Minor",
+            "value": "3"
+          },
+          {
+            "selected": false,
+            "text": "Major",
+            "value": "2"
+          },
+          {
+            "selected": false,
+            "text": "Critical",
+            "value": "1"
+          }
+        ],
+        "query": "OK : 5, Warning : 4, Minor : 3, Major : 2, Critical : 1",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "servicenow-optimiz-plugin",
+        "definition": "cmdb_ci_service_discovered||type||type||operational_status!=2 (generic)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Type",
+        "multi": true,
+        "name": "type",
+        "options": [],
+        "query": {
+          "namespace": "generic",
+          "rawQuery": "cmdb_ci_service_discovered||type||type||operational_status!=2"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Application Services",
+  "uid": "rD_AfGznz",
+  "version": 2
+}

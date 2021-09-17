@@ -1,0 +1,12 @@
+{
+    "config":[
+        {
+            "get_url": "http://ec2-18-232-162-233.compute-1.amazonaws.com:30090",
+            "get_auth": "YWRtaW46YWRtaW4=",
+            "post_url": "http://ec2-18-232-162-233.compute-1.amazonaws.com:30055/api/mid/sa/metrics",
+            "post_auth": "azhtaWR1c2VyOmxhc2VyMjAwMg==",
+            "post_cookie": "changeme",
+            "intreval": 30
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: midserver
+  name: midserver
+  namespace: infra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: midserver
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: midserver
+    spec:
+      containers:
+        - env:
+            - name: SN_HOST_NAME
+              value: <SNInstanceName> 
+            - name: USER_NAME
+              value: <miduser> 
+            - name: PASSWORD 
+              value: <midpass> 
+            - name: HOSTNAME 
+              value: <midname> 
+          image: moers/mid-server:latest 
+          name: sn-midserver
+          resources: {}
+      restartPolicy: Always
+status: {}

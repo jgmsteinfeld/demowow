@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: logging
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: filebeat-config
+  namespace: logging
+  labels:
+    k8s-app: filebeat
+    kubernetes.io/cluster-service: "true"
+data:
+  filebeat.yml: |-
+    filebeat.config:
+     inputs:
+       path: ${path.config}/inputs.d/*.yml
+       reload.enabled: true
+     modules:
+       path: ${path.config}/modules.d/*.yml
+       reload.enabled: true
+
+    filebeat.autodiscover:
+      providers:
+        - type: kubernetes
+          hints.enabled: true
+          include_annotations: ["artifact.spinnaker.io/name","ad.datadoghq.com/tags"]
+          include_labels: ["app.kubernetes.io/name"]
+          labels.dedot: true
+          annotations.dedot: true
+          templates:
+            - condition:
+                equals:
+                  kubernetes.namespace: boutique   #Set the namespace in which your app is running, can add multiple conditions in case of more than 1 namespace.
+              config:
+                - type: docker
+                  containers.ids:
+                    - "${data.kubernetes.container.id}"
+                  # multiline:
+                    # pattern: '^[A-Za-z ]+[0-9]{2} (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)'.   #Timestamp regex for the app logs. Change it as per format. 
+                    # negate: true
+                    # match: after
+                  fields:
+                    sn-application: Boutique 
+                    
+    processors:
+      - add_cloud_metadata: ~
+    #output.console:
+    # pretty: false
+    output.logstash:
+      enabled: true
+      slow_start: true
+      #to stream over ssl with custom mid certificate please uncomment the following line:
+      #ssl.certificate_authorities: ["PATH_TO_CERTIFICATE_AUTHORITY"]
+      ssl.enabled: true
+      #to stream over ssl with custom mid certificate please comment out the following line:
+      ssl.verification_mode: "none"
+       #Update the IP and Port -- 5044 for the MID Server
+       # Run this command for midserver:  kubectl -n infra patch svc midserver -p '{"spec": {"ports": [{"port": 5044,"targetPort": 30055,"name": "midserver"}],"type": "LoadBalancer"}}'
+      hosts: ["10.97.115.1:5044"]
+
+

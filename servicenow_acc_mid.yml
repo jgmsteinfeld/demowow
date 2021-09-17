@@ -1,0 +1,178 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: servicenow
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: servicenow
+  namespace: servicenow
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: servicenow
+  namespace: servicenow
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch
+- nonResourceURLs:
+  - /metrics
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: servicenow
+  namespace: servicenow
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: servicenow
+subjects:
+- kind: ServiceAccount
+  name: servicenow
+  namespace: servicenow
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: servicenow-INSTANCE_NAME-cred
+  namespace: servicenow
+data:
+  username: INSTANCE_USERNAME
+  password: INSTANCE_PASSWORD
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sn-acc-mid-INSTANCE_NAME
+  namespace: servicenow
+  labels:
+    app: sn-acc-mid-INSTANCE_NAME
+spec:
+  replicas: 1
+  serviceName: sn-acc-mid-INSTANCE_NAME
+  selector:
+    matchLabels:
+      app: sn-acc-mid-INSTANCE_NAME
+  template:
+    metadata:
+      labels:
+        app: sn-acc-mid-INSTANCE_NAME
+    spec:
+      serviceAccountName: servicenow
+      containers:
+      - name: sn-acc-mid
+        image: talkapon1/sn_acc_mid:latest
+        resources:
+          requests:
+            cpu: 50m
+            memory: 300M
+        env:
+        - name: CLUSTER_NAME
+          value: CLUSTER_NAME_VALUE
+        - name: SN_INSTANCE
+          value: INSTANCE_NAME
+        - name: SN_URL
+          value: https://INSTANCE_NAME.service-now.com
+        - name: SN_USER
+          valueFrom:
+            secretKeyRef:
+              name: servicenow-INSTANCE_NAME-cred
+              key:  username
+        - name: SN_PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: servicenow-INSTANCE_NAME-cred
+              key:  password
+      - name: sn-acc
+        image: talkapon1/sn_acc:latest
+        env:
+        - name: SN_INSTANCE
+          value: INSTANCE_NAME
+        - name: MID_URL
+          value: ws://127.0.0.1:8800
+        - name: MID_USER
+          value: admin
+        - name: MID_PASSWORD
+          value: admin
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sn-acc-mid-INSTANCE_NAME
+  namespace: servicenow
+  labels:
+    run: sn-acc-mid-INSTANCE_NAME
+spec:
+  ports:
+  - port: 8800
+    targetPort : 8800
+    protocol: TCP
+  selector:
+    app: sn-acc-mid-INSTANCE_NAME
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sn-acc-ds-INSTANCE_NAME
+  namespace: servicenow
+  labels:
+    app: sn-acc-ds-INSTANCE_NAME
+spec:
+  selector:
+    matchLabels:
+      app: sn-acc-ds-INSTANCE_NAME
+  template:
+    metadata:
+      labels:
+        app: sn-acc-ds-INSTANCE_NAME
+    spec:
+      hostNetwork: false
+      hostPID: true
+      containers:
+      - name: sn-acc
+        image: talkapon1/sn_acc:latest
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50M
+        env:
+        - name: SN_INSTANCE
+          value: INSTANCE_NAME
+        - name: MID_USER
+          value: admin
+        - name: MID_PASSWORD
+          value: admin
+        livenessProbe:
+          exec:
+            command:
+            - ./mid_liveness.sh
+          initialDelaySeconds: 30
+          periodSeconds: 60  
+        volumeMounts:
+        - name: proc
+          readOnly:  true
+          mountPath: /host/proc
+        - name: sys
+          readOnly: true
+          mountPath: /host/sys
+      tolerations:
+        - effect: NoSchedule
+          operator: Exists
+      volumes:
+      - name: proc
+        hostPath:
+          path: /proc
+      - name: sys
+        hostPath:
+          path: /sys

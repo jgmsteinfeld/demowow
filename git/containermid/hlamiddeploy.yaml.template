@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: midserver
+  name: hlamidserver
+  namespace: infra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: midserver
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: midserver
+    spec:
+      containers:
+        - env:
+            - name: SN_HOST_NAME
+              value: <SNInstanceName> 
+            - name: USER_NAME
+              value: <miduser> 
+            - name: PASSWORD 
+              value: <midpass> 
+            - name: HOSTNAME 
+              value: <midname> 
+          image: moers/mid-server:latest 
+          name: sn-midserver
+          ports:
+            - containerPort: 5044
+          resources: {}
+      restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hlamidserver
+  namespace: infra
+  labels:
+     app: midserver
+spec:
+  ports:
+     - name: http
+       port: 5044
+       nodePort: 30044
+  selector:
+     app: midserver
+  type: LoadBalancer

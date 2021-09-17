@@ -1,0 +1,12 @@
+{
+    "config":[
+        {
+            "get_url": "http://ec2-52-91-210-93.compute-1.amazonaws.com:32463",
+            "get_auth": "YWRtaW46YWRtaW4=",
+            "post_url": "https://webhook.site/c60f601d-77f0-4eaa-8be6-f80f18816a4c",
+            "post_auth": "YWRtaW46YWRtaW4=",
+            "post_cookie": "changeme",
+            "intreval": 30
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: cartservice
+  namespace: boutique
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"cartservice","namespace":"boutique"},"spec":{"hosts":["cartservice.boutique.svc.cluster.local"],"http":[{"route":[{"destination":{"host":"cartservice.boutique.svc.cluster.local","subset":"v1"},"weight":50},{"destination":{"host":"cartservice.boutique.svc.cluster.local","subset":"v2"},"weight":50}]}]}}
+spec:
+  hosts:
+    - cartservice.boutique.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: cartservice.boutique.svc.cluster.local
+            subset: v1
+          weight: 100 
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: cartservice
+  namespace: boutique
+spec:
+  host: cartservice.boutique.svc.cluster.local
+  subsets:
+  - labels:
+      version: v1
+    name: v1

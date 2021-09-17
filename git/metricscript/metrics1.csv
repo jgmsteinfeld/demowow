@@ -1,0 +1,2 @@
+service,metricName,namespace
+adservice,istio_requests_total,boutique

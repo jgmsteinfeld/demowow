@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: midserver
+  namespace: infra
+  labels:
+     app: midserver
+spec:
+  ports:
+     - name: http
+       port: 8090
+  selector:
+     app: midserver

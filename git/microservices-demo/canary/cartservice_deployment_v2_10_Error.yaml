@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cartservicev2
+  labels:
+    app: cartservice
+    version: v2
+    busapp: boutique
+spec:
+  selector:
+    matchLabels:
+      app: cartservice
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: cartservice
+        version: v2
+        busapp: boutique
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: server
+        image: gcr.io/google-samples/microservices-demo/cartservice:v0.2.1
+        ports:
+        - containerPort: 7070
+        env:
+        - name: REDIS_ADDR
+          value: "redis-cart:6379"
+        - name: PORT
+          value: "7070"
+        - name: LISTEN_ADDR
+          value: "0.0.0.0"
+        resources:
+          requests:
+            cpu: 200m
+            memory: 64Mi
+          limits:
+            cpu: 300m
+            memory: 128Mi
+        readinessProbe:
+          initialDelaySeconds: 15
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:7070", "-rpc-timeout=5s"]
+        livenessProbe:
+          initialDelaySeconds: 15
+          periodSeconds: 10
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:7070", "-rpc-timeout=5s"]
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: cartservice
+  namespace: boutique
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"cartservice","namespace":"boutique"},"spec":{"hosts":["cartservice.boutique.svc.cluster.local"],"http":[{"route":[{"destination":{"host":"cartservice.boutique.svc.cluster.local","subset":"v1"},"weight":50},{"destination":{"host":"cartservice.boutique.svc.cluster.local","subset":"v2"},"weight":50}]}]}}
+spec:
+  hosts:
+    - cartservice.boutique.svc.cluster.local
+  http:
+  - fault:
+      abort:
+        percentage: 
+          value: 10
+        httpStatus: 503
+    route:
+    - destination:
+          host: cartservice.boutique.svc.cluster.local
+          subset: v2
+  - route:
+    - destination:
+          host: cartservice.boutique.svc.cluster.local
+          subset: v2
+      weight: 10
+    - destination:
+          host: cartservice.boutique.svc.cluster.local
+          subset: v1
+      weight: 90
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: cartservice
+  namespace: boutique
+spec:
+  host: cartservice.boutique.svc.cluster.local
+  subsets:
+  - labels:
+      version: v1
+    name: v1
+  - labels:
+      version: v2
+    name: v2
