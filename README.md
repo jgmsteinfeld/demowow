@@ -1,5 +1,5 @@
 # demowow
 
-Please visit the Wiki for this solution located where:  https://github.com/jgmsteinfeld/demowow/wiki
+To Install and Use the solution visit the Wiki:  https://github.com/jgmsteinfeld/demowow/wiki
 
 
