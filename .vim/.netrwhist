@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/ec2-user/.kube'
-let g:netrw_dirhist_2='/home/ec2-user/git'
-let g:netrw_dirhist_3='/home/ec2-user/git/metricserver'
-let g:netrw_dirhist_4='/home/ec2-user/git/microservices-demo/canary'
-let g:netrw_dirhist_5='/home/ec2-user/git/microservices-demo/kubernetes-manifests'
