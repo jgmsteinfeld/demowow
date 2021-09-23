@@ -100,9 +100,10 @@ helm install node-expoerter1 prometheus-community/prometheus-node-exporter
 helm install alrtmgr1 prometheus-community/alertmanager
 
 #install Chaos-Mesh to be able to induce issues into the enviornment
-kubectl apply -f /home/ec2-user/git/chaos-mesh/manifests/
+helm repo add chaos-mesh https://charts.chaos-mesh.org
 kubectl create ns chaos-testing
-helm install chaos-mesh /home/ec2-user/git/chaos-mesh/helm/chaos-mesh --namespace=chaos-testing --set dashboard.create=true
+helm install chaos-mesh chaos-mesh/chaos-mesh --namespace=chaos-testing --version v2.0.1 --set dashboard.create=true
+
 sleep 2
 kubectl -n chaos-testing patch svc chaos-dashboard -p '{"spec": {"type": "LoadBalancer"}}'
 

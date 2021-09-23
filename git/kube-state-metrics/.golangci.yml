@@ -1,0 +1,23 @@
+run:
+  deadline: 2m
+
+linters:
+  disable-all: true
+  enable:
+    - gofmt
+    - goimports
+    - golint
+    - staticcheck
+    - gocyclo
+    - ineffassign
+    - misspell
+    - gocritic
+    - govet
+    - unconvert
+
+linters-settings:
+  goimports:
+    local-prefixes: k8s.io/kube-state-metrics
+
+issues:
+  exclude-use-default: false

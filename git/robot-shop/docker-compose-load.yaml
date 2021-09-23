@@ -1,0 +1,17 @@
+version: '3'
+services:
+  load:
+    image: ${REPO}/rs-load:${TAG}
+    build:
+      context: load-gen
+    environment:
+      HOST: http://web:8080
+    networks:
+      - robot-shop
+    depends_on:
+      - web
+    logging: &logging
+      driver: "json-file"
+      options:
+        max-size: "25m"
+        max-file: "2"

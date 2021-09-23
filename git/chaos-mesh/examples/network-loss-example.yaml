@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: network-loss-example
+  namespace: chaos-testing
+spec:
+  action: loss
+  mode: one
+  selector:
+    labelSelectors:
+      "app.kubernetes.io/component": "tikv"
+  loss:
+    loss: "25"
+    correlation: "25"
+  duration: "10s"
+  scheduler:
+    cron: "@every 15s"

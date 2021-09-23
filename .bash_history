@@ -1,432 +1,3 @@
-ls
-cd ..
-cd release
-ls
-more lightstep-configmap.yaml 
-ls
-diff kubernetes-manifests.yaml ../../microservices-demo_old/release/kubernetes-manifests.yaml
-kubectl -n boutique get svc
-kubectl -n boutique describe svc frontend-external 
-cd
-cat boutiqueaccess 
-ncdu
-sudo apt-get install ncdu
-apt-get install ncdu
-apt-get
-pwd
-whoami
-sudo su -
-sudo yum install ncdu
-yum install epel-release
-sudo yum install epel-release
-sudo amazon-linux-extras install epel
-sudo yum --enablerepo=epel install ncdu
-ncdu
-sudo yum install htop
-htop
-pwd
-ls
-htop
-cat boutiqueaccess 
-ls
-kubectl -n boutique get pods
-kubectl -n boutique describe pod currencyservice-c49bbf775-j4l2k
-m
-df
-kubectl -n boutique describe pod currencyservice-c49bbf775-j4l2k
-pwd
-cat boutiqueaccess 
-sudo su
-pwd
-cd git/microservices-demo
-cd release/
-l
-sls
-ls
-vi kubernetes-manifests.yaml 
-pwd
-cd ..
-kubectl -n boutique apply -f ./release
-pwd
-ls
-cd release
-vi kubernetes-manifests.yaml 
-cd ..
-kubectl -n boutique apply -f ./release
-vi kubernetes-manifests/
-cd kubernetes-manifests/
-ls
-pwd
-ls
-cd ..
-ls
-cd release/
-ls
-pwd
-ls
-vi kubernetes-manifests.yaml 
-cd ..
-kubectl -n boutique apply -f ./release
-clear
-cd release/
-ls
-cat kubernetes-manifests.yaml 
-vi kubernetes-manifests.yaml 
-pwd
-cd ..
-kubectl -n boutique apply -f ./release
-pwd
-ls
-cd release/
-ls
-more kubernetes-manifests.yaml 
-ls
-pwd
-cd
-cat boutiqueaccess 
-kubectl -n boutique get svc
-kubectl -n boutique get pods
-kubectl -n boutique describe pod currencyservice-6d8b67d89f-bqszb
-cat boutiqueaccess 
-more install_microservices_demo.sh 
-kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}'
-kubectl -n boutique describe pod currencyservice-6d8b67d89f-bqszb
-pwd
-ls
-cd git/microservices-demo
-ls
-cd release/
-ls
-vi kubernetes-manifests.yaml 
-cd ..
-kubectl -n boutique apply -f ./release
-pwd
-kubectl -n boutique get pods
-kubectl -n boutique describe pod adservice-8c4f448d5-4p96b 
-cd release
-ls
-vi kubernetes-manifests.yaml 
-cd ..
-ls
-kubectl apply -f ./release
-kubectl -n boutique get pods
-kubectl -n boutique describe pod adservice-8c4f448d5-4p96b
-kubectl -n boutique get pods
-kubectl -n boutique describe pod adservice-8c4f448d5-4p96b
-kubectl -n boutique get pods
-cd 
-pwd
-./scale_workload.sh 
-kubectl -n boutique get pods
-./scale_workload.sh 
-kubectl -n boutique get pods
-./scale_workload.sh 
-kubectl -n boutique get pods
-cat boutiqueaccess 
-pwd
-kubectl -n default get pods
-pwd
-vi install_microservices_demo.sh 
-kubectl -n default get svc
-pwd
-cd git/microservices-demo/
-ls
-kubectl -n default delete -f ./release
-ls
-kubectl -n default get svc
-kubectl -n boutique get pods
-kubectl -n boutique desc pod adservice-8c4f448d5-vbbps
-kubectl -n boutique describe pod adservice-8c4f448d5-vbbps
-kubectl -n boutique desc pod adservice-8c4f448d5-vbbps
-kubectl -n boutique get pods
-ls
-cd git/microservices-demo
-ls
-cd release/
-ls
-more kubernetes-manifests.yaml 
-ls
-cd ..
-ls
-cd ../istio-1.9.0/
-ls
-cd manifests/
-ls
-cd charts/
-ls
-cd ..
-ls
-pwd
-ls
-cd examples/
-ls
-cd ..
-ls
-cd charts/
-ls
-cd base/
-ls
-cd ..
-ls
-cd ..
-ls
-cd ..
-ls
-cd samples/
-ls
-cd addons/
-ls
-more prometheus.yaml
-ls
-ls -ltr
-pwd
-df
-cat boutiqueaccess 
-pwd
-ls
-pwd
-cd
-pwd
-htop
-pwd
-ls
-cd
-ls
-more scale_workload.sh 
-pwd
-vi install_microservices_demo.sh 
-ls
-cat boutiqueaccess 
-ls
-cd git/istio-1.9.0/
-ls
-vi lightstep_prom_LS_sidecar.yaml
-more lightstep_prom_LS_sidecar.yaml 
-kubectl -n istio-system apply -f ./lightstep_prom_LS_sidecar.yaml 
-pwd
-cd
-cat boutiqueaccess 
-pwd
-ls
-pwd
-ls
-cd istio
-cd git/istio-1.
-cd git/istio-1.9.0/
-ls
-ls -ltr
-mv lightstep_prom_LS_sidecar.yaml samples/addons/
-ls
-cd samples/
-cd addons/
-ls
-pwd
-vi lightstep_prom_LS_sidecar.yaml 
-pwd
-ls
-more lightstep_prom_LS_sidecar.yaml 
-pwd
-cd
-pwd
-ls
-more uninstall_microservices_demo.sh 
-./uninstall_microservices_demo.sh 
-pwd
-ls
-pwd
-ls
-more install_microservices_demo.sh 
-cd git/microservices-demo
-ls
-pwd
-cd release/
-ls
-more kubernetes-manifests.yaml 
-pwd
-vi kubernetes-manifests.yaml 
-pwd
-cd
-ls
-vi install_microservices_demo.sh 
-pwd
-./install_microservices_demo.sh 
-kubect -n boutique get pods
-kubectl -n boutique get pods
-kubectl -n boutique describe pod cartservice-68fc8cdcf5-8bv8k
-pwd
-ls
-kubectl -n boutique get pods
-cat boutiqueaccess 
-kubectl -n boutique get pods
-cat boutiqueaccess 
-pwd
-cd git/microservices-demo
-ls
-cd release/
-ls
-cp kubernetes-manifests.yaml kubernetes-manifests-lightstepconfig.yaml
-ls
-mv kubernetes-manifests-lightstepconfig.yaml kubernetes-manifests.lightstep
-ls
-vi kubernetes-manifests.yaml 
-cd
-cat boutiqueaccess 
-cd git/microservices-demo/release/
-ls
-vi kubernetes-manifests.
-vi kubernetes-manifests.yaml 
-kubectl -n boutique apply -f ./kubernetes-manifests.yaml 
-vi kubernetes-manifests.yaml 
-kubectl -n boutique apply -f ./kubernetes-manifests.yaml 
-vi kubernetes-manifests.yaml 
-cd
-cat boutiqueaccess 
-kubectl -n boutique get svc
-kubectl -n default get pods
-kubectl -n boutique get pods
-pwd
-./scale_workload.sh 
-kubectl -n boutique get pods
-./scale_workload.sh 
-ls
-kubectl -n boutique get svc
-cat boutiqueaccess 
-pwd
-cd git/microservices-demo/release/
-ls
-kubectl -n boutique delete -f ./kubernetes-manifests.yaml 
-cd ..
-kubectl -n boutique apply -f ./release
-kubectl -n boutique get svc
-cd
-cat boutiqueaccess 
-cd release
-cd git/microservices-demo/release/
-vi kubernetes-manifests.yaml 
-kubectl -n boutique get pods
-kubectl -n boutique describe pod productcatalogservice-845698454d-zccb5
-ls
-kubectl -n boutique get svc
-cd
-vi install_microservices_demo.sh 
-kubectl -n istio-system get service istio-ingressgateway
-kubectl -n istio-system get svc
-pwd
-ls
-cd
-./uninstall_microservices_demo.sh 
-minikube status
-./install_microservices_demo.sh 
-ls
-cat boutiqueaccess 
-pwd
-cd git/microservices-demo/release/
-ls
-vi kubernetes-manifests.
-vi kubernetes-manifests.yaml 
-kubectl -n boutique apply -f ./kubernetes-manifests.yaml 
-vi kubernetes-manifests.yaml 
-kubectl -n boutique apply -f ./kubernetes-manifests.yaml 
-kubectl -n boutique get pods
-kubectl -n boutique delete -f ./kubernetes-manifests.yaml 
-kubectl -n boutique get pods
-kubectl -n boutique apply -f ./kubernetes-manifests.yaml 
-pwd
-cd
-cat boutiqueaccess 
-kubectl -n boutique get pods
-kubectl -n boutique describe pod adservice-d6b9dffbf-hdr4f
-kubectl -n boutique get pods
-pwd
-cd git/microservices-demo/release/
-ls
-vi kubernetes-manifests.
-vi kubernetes-manifests.yaml 
-ls
-vi kubernetes-manifests.yaml.orig
-pwd
-ls
-cp kubernetes-manifests.yaml.orig kubernetes-manifests.yaml
-ls
-vi kubernetes-manifests.
-vi kubernetes-manifests.yaml
-pwd
-vi kubernetes-manifests.yaml
-kubectl -n boutique delete -f ./kubernetes-manifests.yaml
-kubectl -n boutique apply -f ./kubernetes-manifests.yaml
-kubectl -n boutique get svc
-cd
-cat boutiqueaccess 
-cd git/microservices-demo/release/
-ls
-more kubernetes-manifests.lightstep 
-ls
-more lightstep-configmap.yaml 
-pwd
-ls
-cd
-pwd
-ls
-cd git/microservices-demo/release/
-ls
-vi kubernetes-manifests.lightstep
-pwd
-cd
-ls
-./uninstall_microservices_demo.sh 
-./install_microservices_demo.sh 
-cat boutiqueaccess 
-pwd
-ls
-more deploy_cartservice_v2.sh 
-pwd
-cd git/microservices-demo
-cd canary/
-ls
-more cartservice_deployment_v2.yaml
-ls
-pwd
-ls
-cd ..
-ls
-wd
-pwd
-ls
-cd
-pwd
-ls
-./deploy_cartservice_v2.sh 
-pwd
-./deploy_cartservice_v1.sh 
-pwd
-cd
-./uninstall_microservices_demo.sh 
-minikube status
-pwd
-ls
-vi install_microservices_demo.sh 
-cd git/microservices-demo
-cd release/
-ls
-diff kubernetes-manifests.yaml kubernetes-manifests.yaml.orig 
-cp kubernetes-manifests.lightstep kubernetes-manifests.yaml
-diff kubernetes-manifests.yaml kubernetes-manifests.lightstep 
-pwd
-cd
-./install_microservices_demo.sh 
-cat boutiqueaccess 
-ls
-pwd
-ls
-more install_microservices_demo.sh 
-vi install_microservices_demo.sh 
-kubectl -n boutique get secrets
-grep credential install_microservices_demo.sh 
-kubectl -n boutique create secret generic lightstep-credentials --from-literal=accessToken="UB0Bz3z3Qj1oiAAvRstGobpidzvnnFjAsQHFc4N57rXMsSUOks0rVmZ09btUsoYUy4lToNogacN92D2hr6RQrDxVv3b5A4gllkRoPion"
-kubectl -n boutique get secrets
-cat boutiqueaccess 
-pwd
-ls
 ./deploy_cartservice_v2.sh 
 ./deploy_cartservice_v1.sh 
 pwd
@@ -998,3 +569,432 @@ ls -al
 cd Base\ Dashboards/
 ls -al
 nano git/istio-1.9.0/samples/addons/grafana.yaml
+pwd
+git init
+git add .
+git commit -m "first commit"
+git add origin https://github.com/jgmsteinfeld/demowow.git
+git add origin git@github.com:jgmsteinfeld/demowow.git
+git remote add origin git@github.com:jgmsteinfeld/demowow.git
+git push origin master
+ssh-keygen - t rsa -b 4096 -C "joe.steinfeld@servicenow.com"
+ssh-keygen -t rsa -b 4096 -C "joe.steinfeld@servicenow.com"
+ls
+cd .ssh
+ls
+ls -a
+more authorized_keys 
+cd ..
+ls
+ls -a
+mv JoeGitHub_rsa* ./.ssh
+ls
+cd .ssh
+ls
+cd ..
+pwd
+ssh-add ~/.ssh/JoeGitHub_rsa
+sudo ssh-add ~/.ssh/JoeGitHub_rsa
+pwd
+eval $(ssh-agent -s)
+pwd
+ls
+ssh-add ~/.ssh/JoeGitHub_rsa
+cd .ssh
+ls
+more JoeGitHub_rsa.pub 
+cat JoeGitHub_rsa.pub 
+cd
+pwd
+id
+pwd
+ls
+git push origin master
+pwd
+ls
+cd git
+ls
+ls -l chaos-mesh/
+cd ..
+ls
+pwd
+cd git
+ls
+git rm -r chaos-mesh
+pwd
+ls
+cd
+git rm -r git/chaos-mesh/
+cd ..
+ls
+cd
+git checkout master
+ls
+cd git
+git rm -r chaos-mesh/
+ls
+pwd
+ls
+cd kube-state-metrics
+ls
+ls -a
+cd .github
+ls
+pwd
+ls
+more PULL_REQUEST_TEMPLATE.md 
+cd ..
+ls
+pwd
+ls
+git submodule add .
+git submodule add ./
+pwd
+ls
+cd
+ls
+ls -a
+cd git
+ls
+cd ..
+cd .git
+ls
+ls -a
+pwd
+ls
+cd ..
+ls
+cd git
+ls
+cd kube-state-metrics
+ls
+ls -a
+cd .big
+cd .git
+ls
+pwd
+ls
+cd ..
+ls
+ls -a
+more .gitignore
+vi .gitignore 
+ls
+cd ..
+ls
+ls -a
+more ls -a
+ls -a
+cd chaos-mesh/
+ls
+ls -a
+more .gitignore 
+cd ..
+ls
+cd kube-state-metrics
+ls
+vi -a
+vi .gitignore 
+ls
+more .gitignore 
+ls
+cd ..
+ls
+ls -a
+cd kube-state-metrics
+ls
+vi .gitignore 
+git submodule add ./
+cd 
+ls
+ls -a
+cd .git
+ls
+cd .git
+ls
+cd
+find . -name .gitignore -print
+more .gitignore
+more ./git/robot-shop/.gitignore
+more ./git/robot-shop/shipping/.gitignore
+more ./git/kube-state-metrics/.gitignore
+ls
+git status
+pwd
+cd git
+ls
+cd
+pwd
+ls
+cd ls
+pwd
+cd git
+ls
+git submodule add ./kube-state-metrics
+wcd
+cd
+git submodule add ./git/kube-state-metrics
+cd git/kube-state-metrics
+ls
+ls -a
+cd .github
+ls
+more PULL_REQUEST_TEMPLATE.md 
+cd workflows/
+ls
+more helm-cd.yaml 
+q
+ls
+cd ..
+ls
+cd ..
+ls -a
+cd git
+ls
+cd .git
+ls
+pwd
+ls
+more config
+cd
+git submodule add ./git/kube-state-metrics
+cd .git
+ls
+vi config
+cd git
+cd
+cd git
+ls
+cd kube-state-metrics
+ls
+ls -a
+cd .git
+ls
+vi config
+cd
+git submodule add ./git/kube-state-metrics
+
+pwd
+git status
+pwd
+cd git
+ls
+pwd
+cd git
+ls
+cd
+git add ./git/kube-state-metrics
+git status
+pwd
+git commit ./git/kube-state-metrics
+git add ./git/kube-state-metrics
+git status
+cd git/microservices-demo/helios/
+ls
+ls -a
+cd ..
+ls
+cd helios/
+ls
+cd ..
+ls
+cd ..
+ls
+cd kube-state-metrics
+ls
+ls -a
+more .github
+cd .git
+ls
+more config
+cd ..
+ls
+cd
+ls -a
+cd git
+ls
+pwd
+cd ..
+ls
+ls -a
+cd git
+ls
+cd ..
+cd .git
+ls
+more config
+cd ..
+ls
+pwd
+ls
+git status
+git reset
+git status
+git add ./git/kube-state-metrics
+git status
+ls
+git add install_acc.sh
+git status
+cd
+pwd
+ls
+touch test.file
+git status
+git add ./test.file
+git status
+git reset
+git status
+git submodule add https://github.com/kubernetes/kube-state-metrics ./git/kube-state-metrics
+cd git/kube-state-metrics
+ls
+cd .git
+ls
+more config
+ls
+more HEAD
+more index
+more packed-refs 
+    
+ls
+ls -a
+pwd
+cd ..
+ls -a
+cd .github
+ls
+more PULL_REQUEST_TEMPLATE.md 
+cd ..
+ls
+ls -a
+more .gitignore 
+ls
+cd ..
+ls
+cd kube-state-metrics
+ls
+ls -a
+ls
+ls -a
+mkdir .gitbackup
+mv .git* ./.gitbackup/
+ls
+ls -a
+cd
+git add ./git/kube-state-metrics
+git status
+ls
+cd git/status
+cd git/kube-state-metrics
+ls
+ls -a
+cd
+git add ./git/kube-state-metrics/*
+pwd
+cd git/kube-state-metrics
+ls
+cd 
+ls
+ls -a
+cd git
+ls
+cd ../.git
+ls
+cd modules/
+ls
+ls -a
+cd ..
+ls
+more config 
+cd ..
+ls
+cd git/
+ls
+cd kube-state-metrics
+ls
+cd .gitbackup/
+ls
+ls -a
+cd .github
+ls
+more PULL_REQUEST_TEMPLATE.md 
+ls
+cd workflows/
+ls
+more ci.yml
+ls
+cd ..
+ls
+pwd
+cd ..
+ls
+cd .git
+ls
+more congit
+more config
+cd ..
+pwd
+cd .git
+ls
+cd branches/
+ls
+ls -a
+cd ../hooks
+ls
+cd ../info
+ls
+more exclude 
+cd ../log
+cd ../logs
+ls
+more HEAD 
+cd refs/
+ls
+cd remotes
+ls
+cd origin/
+ls
+more HEAD 
+cd 
+ls
+cd git
+pwd
+cd kube-state-metrics
+l
+ls
+cd .gitbackup/
+ls
+ls -a
+mv * ..
+mv ./* ..
+pwd
+mv ./.* ..
+ls
+pwd
+ls
+ls -a
+cd ..
+ls
+ls -a
+rm .gitbackup/
+ls
+ls -a
+rm -rf ./.gitbackup/
+ls
+ls -a
+pwd
+cd .git
+ls
+more config
+cd git
+ls
+cd kube-state-metrics
+ls
+ls -a
+cd .github
+ls
+cd ..
+cd git
+cd .git
+ls
+more config
+dmesg
