@@ -21,7 +21,7 @@ $
 
 # Command Line History (newest to oldest):
 :wq!
-|2,0,1632416183,,"wq!"
+|2,0,1632419923,,"wq!"
 :q!
 |2,0,1632085566,,"q!"
 :w!
@@ -263,36 +263,50 @@ $
 |3,1,36,0,1,0,1632416179,":"
 
 # File marks:
-'0  105  115  ~/install_microservices_demo.sh
-|4,48,105,115,1632416183,"~/install_microservices_demo.sh"
-'1  7  0  ~/git/kube-state-metrics/.git/config
-|4,49,7,0,1632085566,"~/git/kube-state-metrics/.git/config"
-'2  7  0  ~/.git/config
-|4,50,7,0,1632085519,"~/.git/config"
-'3  1  0  ~/git/kube-state-metrics/.gitignore
-|4,51,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
-'4  2  0  ~/git/kube-state-metrics/.gitignore
-|4,52,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
-'5  1  0  ~/git/kube-state-metrics/.gitignore
-|4,53,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+'0  1  5  ~/.gitignore
+|4,48,1,5,1632419923,"~/.gitignore"
+'1  105  115  ~/install_microservices_demo.sh
+|4,49,105,115,1632416183,"~/install_microservices_demo.sh"
+'2  7  0  ~/git/kube-state-metrics/.git/config
+|4,50,7,0,1632085566,"~/git/kube-state-metrics/.git/config"
+'3  7  0  ~/.git/config
+|4,51,7,0,1632085519,"~/.git/config"
+'4  1  0  ~/git/kube-state-metrics/.gitignore
+|4,52,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+'5  2  0  ~/git/kube-state-metrics/.gitignore
+|4,53,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
 '6  1  0  ~/git/kube-state-metrics/.gitignore
 |4,54,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
 '7  1  0  ~/git/kube-state-metrics/.gitignore
 |4,55,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
 '8  1  0  ~/git/kube-state-metrics/.gitignore
 |4,56,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
-'9  197  55  ~/install_microservices_demo.sh
-|4,57,197,55,1627072259,"~/install_microservices_demo.sh"
+'9  1  0  ~/git/kube-state-metrics/.gitignore
+|4,57,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
 
 # Jumplist (newest first):
+-'  1  5  ~/.gitignore
+|4,39,1,5,1632419923,"~/.gitignore"
 -'  105  115  ~/install_microservices_demo.sh
 |4,39,105,115,1632416183,"~/install_microservices_demo.sh"
+-'  105  115  ~/install_microservices_demo.sh
+|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
+-'  197  55  ~/install_microservices_demo.sh
+|4,39,197,55,1632416077,"~/install_microservices_demo.sh"
 -'  197  55  ~/install_microservices_demo.sh
 |4,39,197,55,1632416077,"~/install_microservices_demo.sh"
 -'  7  0  ~/git/kube-state-metrics/.git/config
 |4,39,7,0,1632085566,"~/git/kube-state-metrics/.git/config"
 -'  7  0  ~/git/kube-state-metrics/.git/config
 |4,39,7,0,1632085566,"~/git/kube-state-metrics/.git/config"
+-'  7  0  ~/git/kube-state-metrics/.git/config
+|4,39,7,0,1632085566,"~/git/kube-state-metrics/.git/config"
+-'  7  0  ~/git/kube-state-metrics/.git/config
+|4,39,7,0,1632085566,"~/git/kube-state-metrics/.git/config"
+-'  1  0  ~/git/kube-state-metrics/.git/config
+|4,39,1,0,1632085538,"~/git/kube-state-metrics/.git/config"
+-'  1  0  ~/git/kube-state-metrics/.git/config
+|4,39,1,0,1632085538,"~/git/kube-state-metrics/.git/config"
 -'  1  0  ~/git/kube-state-metrics/.git/config
 |4,39,1,0,1632085538,"~/git/kube-state-metrics/.git/config"
 -'  1  0  ~/git/kube-state-metrics/.git/config
@@ -305,6 +319,22 @@ $
 |4,39,7,0,1632085519,"~/.git/config"
 -'  7  0  ~/.git/config
 |4,39,7,0,1632085519,"~/.git/config"
+-'  7  0  ~/.git/config
+|4,39,7,0,1632085519,"~/.git/config"
+-'  7  0  ~/.git/config
+|4,39,7,0,1632085519,"~/.git/config"
+-'  7  0  ~/.git/config
+|4,39,7,0,1632085519,"~/.git/config"
+-'  7  0  ~/.git/config
+|4,39,7,0,1632085519,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1632085509,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1632085509,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1632085509,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1632085509,"~/.git/config"
 -'  1  0  ~/.git/config
 |4,39,1,0,1632085509,"~/.git/config"
 -'  1  0  ~/.git/config
@@ -329,6 +359,38 @@ $
 |4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
 -'  1  0  ~/git/kube-state-metrics/.gitignore
 |4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084582,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
+-'  2  0  ~/git/kube-state-metrics/.gitignore
+|4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
 -'  2  0  ~/git/kube-state-metrics/.gitignore
 |4,39,2,0,1632084471,"~/git/kube-state-metrics/.gitignore"
 -'  2  0  ~/git/kube-state-metrics/.gitignore
@@ -362,6 +424,34 @@ $
 -'  1  0  ~/git/kube-state-metrics/.gitignore
 |4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
 -'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084465,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
 |4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
 -'  1  0  ~/git/kube-state-metrics/.gitignore
 |4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
@@ -377,6 +467,10 @@ $
 |4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
 -'  1  0  ~/git/kube-state-metrics/.gitignore
 |4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
+-'  1  0  ~/git/kube-state-metrics/.gitignore
+|4,39,1,0,1632084404,"~/git/kube-state-metrics/.gitignore"
 -'  196  55  ~/install_microservices_demo.sh
 |4,39,196,55,1627072259,"~/install_microservices_demo.sh"
 -'  196  55  ~/install_microservices_demo.sh
@@ -391,102 +485,15 @@ $
 |4,39,196,55,1627072259,"~/install_microservices_demo.sh"
 -'  196  55  ~/install_microservices_demo.sh
 |4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  196  55  ~/install_microservices_demo.sh
-|4,39,196,55,1627072259,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
--'  28  0  ~/install_microservices_demo.sh
-|4,39,28,0,1627072122,"~/install_microservices_demo.sh"
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	*	1632419917	0
+	"	1	5
+	^	1	6
+	.	1	5
+	+	1	5
 
 > ~/install_microservices_demo.sh
 	*	1632416181	0
@@ -782,10 +789,3 @@ $
 > ~/git/microservices-demo/release/istio-manifests.yaml
 	*	1624493743	0
 	"	96	2
-
-> ~/scale_workload.sh
-	*	1624483405	0
-	"	9	3
-	^	9	4
-	.	9	3
-	+	9	3
