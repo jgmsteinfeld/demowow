@@ -57,9 +57,9 @@ minikube start --driver=none
 #minikube start --cpus=max --memory=max
 
 #Install Istio
-export PATH=/home/ec2-user/git/istio-1.9.0/bin:$PATH
+export PATH=/home/ec2-user/git/istio-1.11.2/bin:$PATH
 
-cd /home/ec2-user/git/istio-1.9.0 
+cd /home/ec2-user/git/istio-1.11.2 
 
 #Install Istio with the demo profile
 istioctl install --set profile=demo --set hub=gcr.io/istio-release -y  
@@ -67,7 +67,7 @@ istioctl install --set profile=demo --set hub=gcr.io/istio-release -y
 sleep 10
 
 #Install Prometheus to gather metric data (Needed by Kaili and Istio to visualize Service Mesh)
-kubectl apply -f /home/ec2-user/git/istio-1.9.0/samples/addons/prometheus.yaml
+kubectl apply -f /home/ec2-user/git/istio-1.11.2/samples/addons/prometheus.yaml
 
 sleep 10
 
@@ -77,17 +77,17 @@ kubectl apply -f /home/ec2-user/git/kube-state-metrics/examples/standard/
 sleep 2
 
 #Install Grafana dashboard to view Prometheus metrics
-kubectl apply -f /home/ec2-user/git/istio-1.9.0/samples/addons/grafana.yaml
+kubectl apply -f /home/ec2-user/git/istio-1.11.2/samples/addons/grafana.yaml
 
 sleep 5
 
 #Install Kiali Web Interface to visualize Istio Service Mesh
-kubectl apply -f /home/ec2-user/git/istio-1.9.0/samples/addons/kiali.yaml
+kubectl apply -f /home/ec2-user/git/istio-1.11.2/samples/addons/kiali.yaml
 
 sleep 5
 
 # Install Jaeger tracing app - Jaeger takes up too many resources so disabling for now
-#kubectl apply -f /home/ec2-user/git/istio-1.9.0/samples/addons/jaeger.yaml
+#kubectl apply -f /home/ec2-user/git/istio-1.11.2/samples/addons/jaeger.yaml
 
 sleep 10
 
