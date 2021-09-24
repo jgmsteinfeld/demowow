@@ -3,16 +3,19 @@
 #Install Minikube
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
+rm -f ./minikube-linux-amd64
 
 #Install Kubectl
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+rm -f ./kubectl
 
 #Install Docker Runtime
 sudo yum update -y
 sudo yum install -y docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
+newgrp docker
 
 #Install "conntrack"
 sudo yum install conntrack -y
@@ -39,3 +42,8 @@ unzip master.zip
 rm -f master.zip
 mv demowow-master/* .
 rm -rf demowow-master
+
+#Setup Crontab Entries to keep disk clean
+(sudo crontab -l 2>/dev/null; echo "*30 * * * * /home/ec2-user/clear_logs.sh") | sudo crontab -
+(sudo crontab -l 2>/dev/null; echo "0 0 * * * docker system prune -a -f") | sudo crontab -
+(sudo crontab -l 2>/dev/null; echo "0 0 * * * /usr/bin/rm -f /var/log/messages-*") | sudo crontab -
