@@ -1,12 +1,12 @@
 #/bin/bash
 
 #Install Minikube
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+curl -LO https://storage.googleapis.com/minikube/releases/v1.22.0/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 rm -f ./minikube-linux-amd64
 
 #Install Kubectl
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/v1.21.0/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 rm -f ./kubectl
 
