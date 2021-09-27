@@ -43,6 +43,28 @@ rm -f master.zip
 mv demowow-master/* .
 rm -rf demowow-master
 
+#Get latest Servicenow-Optimiz Grafana Plugin
+wget -O sn-grafana.zip --header="Authorization: token <ENTER_YOUR_TOKEN_HERE>" https://github.com/optimizca/servicenow-grafana/archive/refs/heads/main.zip
+unzip sn-grafana.zip
+rm -f sn-grafana.zip
+mv servicenow-grafana-main/dist git/servicenow-optimiz-plugin
+rm -rf servicenow-grafana-main
+
+#Get latest Novatec-SDG-Panel for Grafana
+wget -O novatec-sdg.zip --header="Authorization: token <ENTER_YOUR_TOKEN_HERE>" https://github.com/R2DToo/novatec-service-dependency-graph-panel/archive/refs/heads/master.zip
+unzip novatec-sdg.zip
+rm -f novatec-sdg.zip
+mv novatec-service-dependency-graph-panel-master/dist git/novatec-sdg-panel
+rm -rf novatec-service-dependency-graph-panel-master
+
+#Get latest Servicenow-Optimiz dashboards for Grafana
+wget -O grafana-dashboards.zip --header="Authorization: token <ENTER_YOUR_TOKEN_HERE>" https://github.com/R2DToo/ServiceNow-Optimiz-Plugin-AMI/archive/refs/heads/main.zip
+unzip grafana-dashboards.zip
+rm -f grafana-dashboards.zip
+rm -f ServiceNow-Optimiz-Plugin-AMI-main/dashboards/dashboards.yaml
+mv ServiceNow-Optimiz-Plugin-AMI-main/dashboards git/dashboards
+rm -rf ServiceNow-Optimiz-Plugin-AMI-main
+
 #Setup Crontab Entries to keep disk clean
 (sudo crontab -l 2>/dev/null; echo "*30 * * * * /home/ec2-user/clear_logs.sh") | sudo crontab -
 (sudo crontab -l 2>/dev/null; echo "0 0 * * * docker system prune -a -f") | sudo crontab -
