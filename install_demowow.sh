@@ -37,28 +37,29 @@ sudo yum --enablerepo=epel install ncdu -y
 
 
 #Get latest Demowow Image
-wget https://github.com/jgmsteinfeld/demowow/archive/refs/heads/master.zip
-unzip master.zip
-rm -f master.zip
+#wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/archive/refs/heads/master.zip
+wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/releases/download/v1.6.1/demowow-master-v1.6.1.zip
+unzip demowow.zip
+rm -f demowow.zip
 mv demowow-master/* .
 rm -rf demowow-master
 
 #Get latest Servicenow-Optimiz Grafana Plugin
-wget -O sn-grafana.zip --header="Authorization: token <ENTER_YOUR_TOKEN_HERE>" https://github.com/optimizca/servicenow-grafana/archive/refs/heads/main.zip
+wget -O sn-grafana.zip --header="Authorization: token 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" https://github.com/optimizca/servicenow-grafana/archive/refs/heads/main.zip
 unzip sn-grafana.zip
 rm -f sn-grafana.zip
 mv servicenow-grafana-main/dist git/servicenow-optimiz-plugin
 rm -rf servicenow-grafana-main
 
 #Get latest Novatec-SDG-Panel for Grafana
-wget -O novatec-sdg.zip --header="Authorization: token <ENTER_YOUR_TOKEN_HERE>" https://github.com/R2DToo/novatec-service-dependency-graph-panel/archive/refs/heads/master.zip
+wget -O novatec-sdg.zip --header="Authorization: token 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" https://github.com/R2DToo/novatec-service-dependency-graph-panel/archive/refs/heads/master.zip
 unzip novatec-sdg.zip
 rm -f novatec-sdg.zip
 mv novatec-service-dependency-graph-panel-master/dist git/novatec-sdg-panel
 rm -rf novatec-service-dependency-graph-panel-master
 
 #Get latest Servicenow-Optimiz dashboards for Grafana
-wget -O grafana-dashboards.zip --header="Authorization: token <ENTER_YOUR_TOKEN_HERE>" https://github.com/R2DToo/ServiceNow-Optimiz-Plugin-AMI/archive/refs/heads/main.zip
+wget -O grafana-dashboards.zip --header="Authorization: token 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" https://github.com/R2DToo/ServiceNow-Optimiz-Plugin-AMI/archive/refs/heads/main.zip
 unzip grafana-dashboards.zip
 rm -f grafana-dashboards.zip
 rm -f ServiceNow-Optimiz-Plugin-AMI-main/dashboards/dashboards.yaml
