@@ -21,11 +21,13 @@ $istio-1.11.2
 
 # Command Line History (newest to oldest):
 :wq!
-|2,0,1632430533,,"wq!"
+|2,0,1633355773,,"wq!"
+:q!
+|2,0,1633017582,,"q!"
+:wq1
+|2,0,1632750523,,"wq1"
 :%s/istio-1.9.0/istio-1.11.2/g
 |2,0,1632430443,,"%s/istio-1.9.0/istio-1.11.2/g"
-:q!
-|2,0,1632430403,,"q!"
 :w!
 |2,0,1627072200,,"w!"
 :1
@@ -235,264 +237,336 @@ $istio-1.11.2
 
 # Registers:
 "0	LINE	0
-	echo "Chaos-Mesh Dashboard URL: http://${pubhostname}:${chaosport}" >> /home/ec2-user/microservicesaccess
-|3,0,0,1,1,0,1627072221,"echo \"Chaos-Mesh Dashboard URL: http://${pubhostname}:${chaosport}\" >> /home/ec2-user/microservicesaccess"
-""1	LINE	0
-	curl -L https://istio.io/downloadIstio | sh -dd
-|3,1,1,1,1,0,1632430024,"curl -L https://istio.io/downloadIstio | sh -dd"
+	wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/archive/refs/heads/master.zip
+|3,0,0,1,1,0,1633015992,"wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/archive/refs/heads/master.zip"
+"1	LINE	0
+	​
+|3,0,1,1,1,0,1632750610,"​"
 "2	LINE	0
 	
-|3,0,2,1,1,0,1632420468,""
+|3,0,2,1,1,0,1632749735,""
 "3	LINE	0
-	helm install chaos-mesh /home/ec2-user/git/chaos-mesh/helm/chaos-mesh --namespace=chaos-testing --set dashboard.create=true
-|3,0,3,1,1,0,1632416154,"helm install chaos-mesh /home/ec2-user/git/chaos-mesh/helm/chaos-mesh --namespace=chaos-testing --set dashboard.create=true"
-"4	LINE	0
-	kubectl create ns chaos-testing
-|3,0,4,1,1,0,1632416153,"kubectl create ns chaos-testing"
-"5	LINE	0
-	kubectl apply -f /home/ec2-user/git/chaos-mesh/manifests/
-|3,0,5,1,1,0,1632416152,"kubectl apply -f /home/ec2-user/git/chaos-mesh/manifests/"
-"6	LINE	0
-	/kube-state-metrics
-|3,0,6,1,1,0,1632084580,"/kube-state-metrics"
-"7	LINE	0
 	
-|3,0,7,1,1,0,1626359507,""
+|3,0,3,1,1,0,1632749676,""
+"4	LINE	0
+	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+|3,0,4,1,1,0,1632509656,"curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64"
+"5	LINE	0
+	sudo install minikube-linux-amd64 /usr/local/bin/minikube
+|3,0,5,1,1,0,1632498378,"sudo install minikube-linux-amd64 /usr/local/bin/minikube"
+"6	LINE	0
+	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+|3,0,6,1,1,0,1632498377,"curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64"
+"7	LINE	0
+	curl -L https://istio.io/downloadIstio | sh -dd
+|3,0,7,1,1,0,1632430024,"curl -L https://istio.io/downloadIstio | sh -dd"
 "8	LINE	0
 	
-|3,0,8,1,1,0,1626359506,""
+|3,0,8,1,1,0,1632420468,""
 "9	LINE	0
-	
-|3,0,9,1,1,0,1626359505,""
-"-	CHAR	0
+	helm install chaos-mesh /home/ec2-user/git/chaos-mesh/helm/chaos-mesh --namespace=chaos-testing --set dashboard.create=true
+|3,0,9,1,1,0,1632416154,"helm install chaos-mesh /home/ec2-user/git/chaos-mesh/helm/chaos-mesh --namespace=chaos-testing --set dashboard.create=true"
+""-	CHAR	0
 	:
-|3,0,36,0,1,0,1632416179,":"
+|3,1,36,0,1,0,1633355600,":"
 
 # File marks:
-'0  111  11  ~/install_microservices_demo.sh
-|4,48,111,11,1632430533,"~/install_microservices_demo.sh"
-'1  1  0  ~/install_
-|4,49,1,0,1632430403,"~/install_"
-'2  1  390  ~/.ssh/authorized_keys
-|4,50,1,390,1632430060,"~/.ssh/authorized_keys"
-'3  77  6  ~/install_microservices_demo.sh
-|4,51,77,6,1632429920,"~/install_microservices_demo.sh"
-'4  77  6  ~/install_microservices_demo.sh
-|4,52,77,6,1632429920,"~/install_microservices_demo.sh"
-'5  3  0  ~/.gitignore
-|4,53,3,0,1632420472,"~/.gitignore"
-'6  1  5  ~/.gitignore
-|4,54,1,5,1632419923,"~/.gitignore"
-'7  1  5  ~/.gitignore
-|4,55,1,5,1632419923,"~/.gitignore"
-'8  105  115  ~/install_microservices_demo.sh
-|4,56,105,115,1632416183,"~/install_microservices_demo.sh"
-'9  105  115  ~/install_microservices_demo.sh
-|4,57,105,115,1632416183,"~/install_microservices_demo.sh"
+'0  3  0  ~/.gitignore
+|4,48,3,0,1633355773,"~/.gitignore"
+'1  6  11  ~/.gitignore
+|4,49,6,11,1633355692,"~/.gitignore"
+'2  6  11  ~/.gitignore
+|4,50,6,11,1633355692,"~/.gitignore"
+'3  4  4  ~/.gitignore
+|4,51,4,4,1633355606,"~/.gitignore"
+'4  4  4  ~/.gitignore
+|4,52,4,4,1633355606,"~/.gitignore"
+'5  4  4  ~/.gitignore
+|4,53,4,4,1633355606,"~/.gitignore"
+'6  4  4  ~/.gitignore
+|4,54,4,4,1633355606,"~/.gitignore"
+'7  66  62  ~/install_demowow.sh
+|4,55,66,62,1633017582,"~/install_demowow.sh"
+'8  66  62  ~/install_demowow.sh
+|4,56,66,62,1633017464,"~/install_demowow.sh"
+'9  43  12  ~/install_demowow.sh
+|4,57,43,12,1633016343,"~/install_demowow.sh"
 
 # Jumplist (newest first):
--'  111  11  ~/install_microservices_demo.sh
-|4,39,111,11,1632430533,"~/install_microservices_demo.sh"
--'  90  37  ~/install_microservices_demo.sh
-|4,39,90,37,1632430528,"~/install_microservices_demo.sh"
--'  85  36  ~/install_microservices_demo.sh
-|4,39,85,36,1632430527,"~/install_microservices_demo.sh"
--'  80  36  ~/install_microservices_demo.sh
-|4,39,80,36,1632430526,"~/install_microservices_demo.sh"
--'  70  36  ~/install_microservices_demo.sh
-|4,39,70,36,1632430526,"~/install_microservices_demo.sh"
--'  65  53  ~/install_microservices_demo.sh
-|4,39,65,53,1632430524,"~/install_microservices_demo.sh"
--'  62  22  ~/install_microservices_demo.sh
-|4,39,62,22,1632430522,"~/install_microservices_demo.sh"
--'  60  31  ~/install_microservices_demo.sh
-|4,39,60,31,1632430521,"~/install_microservices_demo.sh"
--'  126  21  ~/install_microservices_demo.sh
-|4,39,126,21,1632430517,"~/install_microservices_demo.sh"
--'  123  22  ~/install_microservices_demo.sh
-|4,39,123,22,1632430516,"~/install_microservices_demo.sh"
--'  120  22  ~/install_microservices_demo.sh
-|4,39,120,22,1632430515,"~/install_microservices_demo.sh"
--'  117  11  ~/install_microservices_demo.sh
-|4,39,117,11,1632430514,"~/install_microservices_demo.sh"
--'  114  11  ~/install_microservices_demo.sh
-|4,39,114,11,1632430514,"~/install_microservices_demo.sh"
--'  91  0  ~/install_microservices_demo.sh
-|4,39,91,0,1632430512,"~/install_microservices_demo.sh"
--'  77  6  ~/install_microservices_demo.sh
-|4,39,77,6,1632430443,"~/install_microservices_demo.sh"
--'  1  0  ~/install_
-|4,39,1,0,1632430403,"~/install_"
--'  1  0  ~/install_
-|4,39,1,0,1632430403,"~/install_"
--'  1  390  ~/.ssh/authorized_keys
-|4,39,1,390,1632430060,"~/.ssh/authorized_keys"
--'  1  390  ~/.ssh/authorized_keys
-|4,39,1,390,1632430060,"~/.ssh/authorized_keys"
--'  1  390  ~/.ssh/authorized_keys
-|4,39,1,390,1632430060,"~/.ssh/authorized_keys"
--'  1  390  ~/.ssh/authorized_keys
-|4,39,1,390,1632430060,"~/.ssh/authorized_keys"
--'  77  6  ~/install_microservices_demo.sh
-|4,39,77,6,1632429920,"~/install_microservices_demo.sh"
--'  77  6  ~/install_microservices_demo.sh
-|4,39,77,6,1632429920,"~/install_microservices_demo.sh"
--'  77  6  ~/install_microservices_demo.sh
-|4,39,77,6,1632429920,"~/install_microservices_demo.sh"
--'  77  6  ~/install_microservices_demo.sh
-|4,39,77,6,1632429920,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632429837,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632429837,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632429837,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632429837,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632429837,"~/install_microservices_demo.sh"
 -'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
+|4,39,3,0,1633355773,"~/.gitignore"
+-'  6  11  ~/.gitignore
+|4,39,6,11,1633355756,"~/.gitignore"
+-'  6  11  ~/.gitignore
+|4,39,6,11,1633355692,"~/.gitignore"
+-'  4  4  ~/.gitignore
+|4,39,4,4,1633355641,"~/.gitignore"
+-'  4  4  ~/.gitignore
+|4,39,4,4,1633355641,"~/.gitignore"
+-'  4  4  ~/.gitignore
+|4,39,4,4,1633355606,"~/.gitignore"
 -'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
+|4,39,3,0,1633355430,"~/.gitignore"
 -'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  3  0  ~/.gitignore
-|4,39,3,0,1632420472,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632420237,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  1  5  ~/.gitignore
-|4,39,1,5,1632419923,"~/.gitignore"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  105  115  ~/install_microservices_demo.sh
-|4,39,105,115,1632416183,"~/install_microservices_demo.sh"
--'  197  55  ~/install_microservices_demo.sh
-|4,39,197,55,1632416077,"~/install_microservices_demo.sh"
--'  197  55  ~/install_microservices_demo.sh
-|4,39,197,55,1632416077,"~/install_microservices_demo.sh"
--'  197  55  ~/install_microservices_demo.sh
-|4,39,197,55,1632416077,"~/install_microservices_demo.sh"
--'  197  55  ~/install_microservices_demo.sh
-|4,39,197,55,1632416077,"~/install_microservices_demo.sh"
--'  197  55  ~/install_microservices_demo.sh
-|4,39,197,55,1632416077,"~/install_microservices_demo.sh"
--'  197  55  ~/install_microservices_demo.sh
-|4,39,197,55,1632416077,"~/install_microservices_demo.sh"
+|4,39,3,0,1633355430,"~/.gitignore"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017582,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  66  62  ~/install_demowow.sh
+|4,39,66,62,1633017464,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633017256,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  43  12  ~/install_demowow.sh
+|4,39,43,12,1633016343,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  69  0  ~/install_demowow.sh
+|4,39,69,0,1633013624,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  68  0  ~/install_demowow.sh
+|4,39,68,0,1632752030,"~/install_demowow.sh"
+-'  67  0  ~/install_demowow.sh
+|4,39,67,0,1632752024,"~/install_demowow.sh"
+-'  67  0  ~/install_demowow.sh
+|4,39,67,0,1632752024,"~/install_demowow.sh"
+-'  67  0  ~/install_demowow.sh
+|4,39,67,0,1632752024,"~/install_demowow.sh"
+-'  66  0  ~/install_demowow.sh
+|4,39,66,0,1632752024,"~/install_demowow.sh"
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	*	1633355771	0
+	"	3	0
+	^	3	1
+	.	3	0
+	+	1	6
+	+	3	8
+	+	4	0
+	+	4	5
+	+	6	11
+	+	3	0
+
+> ~/install_demowow.sh
+	*	1633017576	0
+	"	66	62
+	^	62	102
+	.	62	101
+	+	45	21
+	+	70	45
+	+	71	0
+	+	72	0
+	+	71	40
+	+	72	49
+	+	70	47
+	+	71	42
+	+	72	51
+	+	70	54
+	+	71	49
+	+	72	58
+	+	70	77
+	+	71	29
+	+	72	29
+	+	71	72
+	+	72	81
+	+	12	0
+	+	11	14
+	+	6	27
+	+	18	12
+	+	5	105
+	+	5	0
+	+	4	85
+	+	9	42
+	+	68	0
+	+	67	40
+	+	68	0
+	+	60	0
+	+	59	51
+	+	60	0
+	+	47	0
+	+	53	0
+	+	48	93
+	+	55	94
+	+	62	101
+	+	48	95
+	+	40	5
+	+	41	0
+	+	40	0
+	+	41	109
+	+	42	12
+	+	43	12
+	+	48	93
+	+	55	94
+	+	62	101
+
+> ~/.ssh/authorized_keys
+	*	1632439576	0
+	"	2	752
+	^	2	753
+	.	2	752
+	+	1	391
+	+	2	752
 
 > ~/install_microservices_demo.sh
 	*	1632430528	0
@@ -603,21 +677,6 @@ $istio-1.11.2
 > ~/install_
 	*	1632430401	0
 	"	1	0
-
-> ~/.ssh/authorized_keys
-	*	1632430057	0
-	"	1	390
-	^	1	391
-	.	1	390
-	+	1	390
-
-> ~/.gitignore
-	*	1632420468	0
-	"	3	0
-	.	4	0
-	+	1	6
-	+	3	8
-	+	4	0
 
 > ~/git/kube-state-metrics/.git/config
 	*	1632085548	0
@@ -790,11 +849,3 @@ $istio-1.11.2
 	^	39	82
 	.	39	81
 	+	39	81
-
-> ~/git/istio-1.9.0/lightstep_prom_LS_sidecar.yaml
-	*	1624641158	0
-	"	39	161
-	^	39	162
-	.	39	161
-	+	133	17
-	+	39	161
