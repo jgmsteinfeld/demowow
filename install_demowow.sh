@@ -37,8 +37,7 @@ sudo yum --enablerepo=epel install ncdu -y
 
 
 #Get latest Demowow Image
-#wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/archive/refs/heads/master.zip
-wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/releases/download/v1.6.1/demowow-master-v1.6.1.zip
+wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/releases/download/v1.6.2/demowow-1.6.2.zip 
 unzip demowow.zip
 rm -f demowow.zip
 mv demowow-master/* .
