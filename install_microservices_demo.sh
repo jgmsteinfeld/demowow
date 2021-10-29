@@ -154,13 +154,13 @@ kdashport=`kubectl -n kubernetes-dashboard get svc | grep LoadBalancer | cut -d 
 sleep 2
 
 #Install Weave Scope for visibility into cluster connections
-kubectl apply -f "https://cloud.weave.works/k8s/scope.yaml?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+#kubectl apply -f "https://cloud.weave.works/k8s/scope.yaml?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
 #Surface Webscope Port externally
-kubectl -n weave patch svc weave-scope-app -p '{"spec": {"type": "LoadBalancer"}}'
+#kubectl -n weave patch svc weave-scope-app -p '{"spec": {"type": "LoadBalancer"}}'
 
 #Get WeaveScope dashboard port
-weaveport=`kubectl -n weave get svc | grep LoadBalancer | cut -d ':' -f2 | cut -d '/' -f1`
+#weaveport=`kubectl -n weave get svc | grep LoadBalancer | cut -d ':' -f2 | cut -d '/' -f1`
 
 # Apply Specific Application Based Installation
 case $opt in
@@ -194,7 +194,7 @@ echo "Public Prometheus URL: http://${pubhostname}:${promeport}" >> /home/ec2-us
 echo "Public Grafana URL: http://${pubhostname}:${grafport}" >> /home/ec2-user/microservicesaccess
 echo "Kubernetes Dashboard URL: https://${pubhostname}:${kdashport}" >> /home/ec2-user/microservicesaccess
 echo "Chaos-Mesh Dashboard URL: http://${pubhostname}:${chaosport}" >> /home/ec2-user/microservicesaccess
-echo "Weave Scope URL: http://${pubhostname}:${weaveport}" >> /home/ec2-user/microservicesaccess
+#echo "Weave Scope URL: http://${pubhostname}:${weaveport}" >> /home/ec2-user/microservicesaccess
 echo "" >> /home/ec2-user/microservicesaccess
 echo "========== The Following is needed by discovery to discover the Cluster =============" >> /home/ec2-user/microservicesaccess
 echo "Cluster API URL: ${apiserverurl}" >> /home/ec2-user/microservicesaccess

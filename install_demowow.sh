@@ -45,21 +45,21 @@ mv demowow-master/* .
 rm -rf demowow-master
 
 #Get latest Servicenow-Optimiz Grafana Plugin
-wget -O sn-grafana.zip --header="Authorization: token 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" https://github.com/optimizca/servicenow-grafana/archive/refs/heads/main.zip
+wget -O sn-grafana.zip https://github.com/optimizca/servicenow-grafana/archive/refs/heads/main.zip
 unzip sn-grafana.zip
 rm -f sn-grafana.zip
 mv servicenow-grafana-main/dist git/servicenow-optimiz-plugin
 rm -rf servicenow-grafana-main
 
 #Get latest Novatec-SDG-Panel for Grafana
-wget -O novatec-sdg.zip --header="Authorization: token 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" https://github.com/R2DToo/novatec-service-dependency-graph-panel/archive/refs/heads/master.zip
+wget -O novatec-sdg.zip https://github.com/R2DToo/novatec-service-dependency-graph-panel/archive/refs/heads/master.zip
 unzip novatec-sdg.zip
 rm -f novatec-sdg.zip
 mv novatec-service-dependency-graph-panel-master/dist git/novatec-sdg-panel
 rm -rf novatec-service-dependency-graph-panel-master
 
 #Get latest Servicenow-Optimiz dashboards for Grafana
-wget -O grafana-dashboards.zip --header="Authorization: token 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" https://github.com/R2DToo/ServiceNow-Optimiz-Plugin-AMI/archive/refs/heads/main.zip
+wget -O grafana-dashboards.zip https://github.com/R2DToo/ServiceNow-Optimiz-Plugin-AMI/archive/refs/heads/main.zip
 unzip grafana-dashboards.zip
 rm -f grafana-dashboards.zip
 rm -f ServiceNow-Optimiz-Plugin-AMI-main/dashboards/dashboards.yaml
