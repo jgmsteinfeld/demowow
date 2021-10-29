@@ -62,6 +62,8 @@ wget -O grafana-dashboards.zip https://github.com/R2DToo/ServiceNow-Optimiz-Plug
 unzip grafana-dashboards.zip
 rm -f grafana-dashboards.zip
 rm -f ServiceNow-Optimiz-Plugin-AMI-main/dashboards/dashboards.yaml
+rm -rf git/dashboards
+mkdir git/dashboards
 mv ServiceNow-Optimiz-Plugin-AMI-main/dashboards git/dashboards
 rm -rf ServiceNow-Optimiz-Plugin-AMI-main
 
