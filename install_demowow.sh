@@ -40,8 +40,8 @@ sudo yum --enablerepo=epel install ncdu -y
 wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/releases/download/v1.6.2/demowow-1.6.2.zip 
 unzip demowow.zip
 rm -f demowow.zip
-mv demowow-master/* .
-rm -rf demowow-master
+mv demowow-1.6.2/* .
+rm -rf demowow-1.6.2
 
 #Get latest Servicenow-Optimiz Grafana Plugin
 wget -O sn-grafana.zip https://github.com/optimizca/servicenow-grafana/archive/refs/heads/main.zip
