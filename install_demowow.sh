@@ -37,11 +37,11 @@ sudo yum --enablerepo=epel install ncdu -y
 
 
 #Get latest Demowow Image
-wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/releases/download/v1.6.2/demowow-1.6.2.zip 
+wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/releases/download/v1.6.3/demowow-1.6.3.zip 
 unzip demowow.zip
 rm -f demowow.zip
-mv demowow-1.6.2/* .
-rm -rf demowow-1.6.2
+mv demowow-1.6.3/* .
+rm -rf demowow-1.6.3
 
 #Setup Crontab Entries to keep disk clean
 (sudo crontab -l 2>/dev/null; echo "*30 * * * * /home/ec2-user/clear_logs.sh") | sudo crontab -
