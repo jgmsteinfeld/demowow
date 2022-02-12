@@ -1,5 +1,10 @@
 #/bin/bash
 
+# Validate password is passed in via first parameter
+if [ "$1" == "" ]; then
+       echo "Usage: $0 <demowow password>" 1>&2; exit 1;
+fi
+
 #Install Minikube
 curl -LO https://storage.googleapis.com/minikube/releases/v1.22.0/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
@@ -35,6 +40,8 @@ sudo yum install htop -y
 sudo amazon-linux-extras install epel -y
 sudo yum --enablerepo=epel install ncdu -y
 
+#Install Wetty
+sudo /home/ec2-user/install_wetty.sh "$1"
 
 #Get latest Demowow Image
 wget -O demowow.zip https://github.com/jgmsteinfeld/demowow/releases/download/v1.6.3/demowow-1.6.3.zip 
