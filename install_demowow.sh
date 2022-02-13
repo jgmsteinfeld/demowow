@@ -40,6 +40,9 @@ sudo yum install htop -y
 sudo amazon-linux-extras install epel -y
 sudo yum --enablerepo=epel install ncdu -y
 
+#Install Falcon Sensor
+/home/ec2-user/install_falcon_agent.sh
+
 #Install Wetty
 sudo /home/ec2-user/install_wetty.sh "$1"
 
