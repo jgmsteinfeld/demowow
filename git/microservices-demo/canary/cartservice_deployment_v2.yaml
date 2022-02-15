@@ -49,6 +49,23 @@ spec:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:7070", "-rpc-timeout=5s"]
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cartservice
+  labels:
+    app: cartservice
+    version: v2
+    busapp: boutique
+spec:
+  type: ClusterIP
+  selector:
+    app: cartservice
+  ports:
+  - name: grpc
+    port: 7070
+    targetPort: 7070
+---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
