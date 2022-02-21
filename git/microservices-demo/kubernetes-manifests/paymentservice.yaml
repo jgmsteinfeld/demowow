@@ -16,6 +16,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
+  labels:
+    app: paymentservice
+    version: v1.0
+    busapp: boutique
 spec:
   selector:
     matchLabels:
@@ -24,12 +28,15 @@ spec:
     metadata:
       labels:
         app: paymentservice
+        version: v1.0
+        busapp: boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: pangealab/paymentservice:latest
+        #image: pangealab/paymentservice:latest
+        image: demowow/paymentservice:v1.0 
         ports:
         - containerPort: 50051
         envFrom:
@@ -40,6 +47,8 @@ spec:
           value: "50051"
         - name: LS_SERVICE_NAME
           value: paymentservice
+        - name: LS_SERVICE_VERSION
+          value: v1.0
         - name: LS_ACCESS_TOKEN
           valueFrom:
             secretKeyRef:
@@ -48,9 +57,14 @@ spec:
         - name: JAEGER_SERVICE_ADDR
           value: "simplest-collector.jaeger.svc.cluster.local:14268"                        
         readinessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 15
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
         livenessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 15
+          timeoutSeconds: 2
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
         resources:

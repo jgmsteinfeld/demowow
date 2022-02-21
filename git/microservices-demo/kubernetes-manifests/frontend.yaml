@@ -16,6 +16,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels:
+    app: frontend
+    version: v1.0
+    busapp: boutique
 spec:
   selector:
     matchLabels:
@@ -24,13 +28,16 @@ spec:
     metadata:
       labels:
         app: frontend
+        version: v1.0
+        busapp: boutique
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: pangealab/frontend:latest
+          #image: pangealab/frontend:latest
+          image: demowow/frontend:v1.0 
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -73,6 +80,8 @@ spec:
             value: "gcp"
           - name: LS_SERVICE_NAME
             value: frontend
+          - name: LS_SERVICE_VERSION
+            value: v1.0
           - name: LS_ACCESS_TOKEN
             valueFrom:
               secretKeyRef:

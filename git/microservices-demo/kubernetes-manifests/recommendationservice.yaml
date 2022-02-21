@@ -16,6 +16,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
+  labels:
+    app: recommendationservice
+    version: v1.0
+    busapp: boutique
 spec:
   selector:
     matchLabels:
@@ -24,20 +28,27 @@ spec:
     metadata:
       labels:
         app: recommendationservice
+        version: v1.0
+        busapp: boutique
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: pangealab/recommendationservice:latest
+        #image: pangealab/recommendationservice:latest
+        image: demowow/recommendationservice:v1.0 
         ports:
         - containerPort: 8080
         readinessProbe:
-          periodSeconds: 5
+          failureThreshold: 30
+          periodSeconds: 15 
+          initialDelaySeconds: 10
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:8080"]
         livenessProbe:
-          periodSeconds: 5
+          failureThreshold: 30
+          periodSeconds: 15
+          initialDelaySeconds: 10
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:8080"]
         envFrom:
@@ -48,8 +59,12 @@ spec:
           value: "8080"
         - name: PRODUCT_CATALOG_SERVICE_ADDR
           value: "productcatalogservice:3550"
+        - name: PYTHONHTTPSVERIFY
+          value: "0"
         - name: LS_SERVICE_NAME
           value: recommendationservice
+        - name: LS_SERVICE_VERSION
+          value: v1.0
         - name: LS_ACCESS_TOKEN
           valueFrom:
             secretKeyRef:

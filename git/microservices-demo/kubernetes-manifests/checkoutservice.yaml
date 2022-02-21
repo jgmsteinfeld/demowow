@@ -16,6 +16,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
+  labels:
+    app: checkoutservice
+    version: v1.0
+    busapp: boutique
 spec:
   selector:
     matchLabels:
@@ -24,17 +28,24 @@ spec:
     metadata:
       labels:
         app: checkoutservice
+        version: v1.0
+        busapp: boutique
     spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: pangealab/checkoutservice:latest
+          #image: pangealab/checkoutservice:latest
+          image: demowow/checkoutservice:v1.0 
           ports:
           - containerPort: 5050
           readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 15
             exec:
               command: ["/bin/grpc_health_probe", "-addr=:5050"]
           livenessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 15
             exec:
               command: ["/bin/grpc_health_probe", "-addr=:5050"]
           envFrom:
@@ -57,6 +68,8 @@ spec:
             value: "cartservice:7070"
           - name: LS_SERVICE_NAME
             value: checkoutservice
+          - name: LS_SERVICE_VERSION
+            value: v1.0
           - name: LS_ACCESS_TOKEN
             valueFrom:
               secretKeyRef:

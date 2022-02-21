@@ -21,7 +21,8 @@ kubectl create ns boutique
 kubectl label namespace boutique istio-injection=enabled
 
 #Deploy our boutique application
-kubectl -n boutique apply -f ./release
+#kubectl -n boutique apply -f ./release
+kubectl -n boutique apply -f ./kubernetes-manifests
 
 
 # Get IstioGtway port information
