@@ -45,7 +45,7 @@ dependencies {
                 "io.grpc:grpc-stub:${grpcVersion}",
                 "io.grpc:grpc-netty:${grpcVersion}",
                 "io.grpc:grpc-services:${grpcVersion}",
-                "org.apache.logging.log4j:log4j-core:2.13.3"
+                "org.apache.logging.log4j:log4j-core:2.16.0"
 
         runtimeOnly "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}",
                 "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}",
@@ -120,7 +120,8 @@ task adServiceClient(type: CreateStartScripts) {
             ["-Dlog4j2.contextDataInjector=io.opencensus.contrib.logcorrelation.log4j2.OpenCensusTraceContextDataInjector",
             // LightStep Instrumentation
             //  "-agentpath:/opt/cprof/profiler_java_agent.so=-cprof_service=adserviceclient,-cprof_service_version=1.0.0",
-            "-javaagent:/app/lightstep-opentelemetry-javaagent-0.8.1.jar"
+            //"-javaagent:/app/lightstep-opentelemetry-javaagent-1.6.0.jar"
+            "-javaagent:/app/lightstep-opentelemetry-javaagent.jar"
             ]
 }
 

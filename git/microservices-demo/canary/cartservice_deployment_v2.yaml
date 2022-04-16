@@ -22,7 +22,9 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/cartservice:v0.2.1
+        #image: gcr.io/google-samples/microservices-demo/cartservice:v0.2.1
+        image: demowow/cartservice:v1.0
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 7070
         env:
@@ -32,6 +34,15 @@ spec:
           value: "7070"
         - name: LISTEN_ADDR
           value: "0.0.0.0"
+        - name: LS_SERVICE_NAME
+          value: cartservice
+        - name: LS_SERVICE_VERSION
+          value: v2.0
+        - name: LS_ACCESS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: lightstep-credentials
+              key: accessToken
         resources:
           requests:
             cpu: 200m
