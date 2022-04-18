@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using cartservice.cartstore;
 using cartservice.services;
 using OpenTelemetry;
+using OpenTelemetry.Instrumentation.AspNetCore;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Context.Propagation;
@@ -40,6 +41,8 @@ namespace cartservice
             string lsHost = Environment.GetEnvironmentVariable(LIGHTSTEP_HOST);
             int lsPort = Int32.Parse(Environment.GetEnvironmentVariable(LIGHTSTEP_PORT));
             string serviceName = Environment.GetEnvironmentVariable("LS_SERVICE_NAME");
+            string serviceVersion = Environment.GetEnvironmentVariable("LS_SERVICE_VERSION");
+            //string accessToken = Environment.GetEnvironmentVariable("LS_ACCESS_TOKEN");  //Joe
             string accessToken = Environment.GetEnvironmentVariable(LIGHTSTEP_ACCESS_TOKEN);
             // create and register an activity source
             var activitySource = new ActivitySource(serviceName);
@@ -71,16 +74,19 @@ namespace cartservice
                 .AddGrpcClientInstrumentation()
                 .AddConsoleExporter()
                 .AddRedisInstrumentation(cartStore.Connection)
-                .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
+                //.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName))
+                .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName: serviceName, serviceVersion: serviceVersion))
+                // Joe S. - Added Service Version below
                 .AddOtlpExporter(opt => {
-                    opt.Endpoint = $"{lsHost}:{lsPort}";
-                    opt.Headers = new Metadata
-                    {
-                        { "lightstep-access-token", accessToken }
-                    };
-                    opt.Credentials = new SslCredentials();
+                    //opt.Endpoint = $"{lsHost}:{lsPort}";
+                    opt.Endpoint = new Uri("https://ingest.lightstep.com:443");
+                    opt.Headers = "lightstep-access-token=" + accessToken;
+                    //opt.Headers = new Metadata
+                    //{
+                    //    { "lightstep-access-token", accessToken }
+                    //};
+                    //opt.Credentials = new SslCredentials();
             }));
-
             // Initialize the redis store
             cartStore.InitializeAsync().GetAwaiter().GetResult();
             Console.WriteLine("Initialization completed");
