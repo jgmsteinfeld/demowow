@@ -14,8 +14,8 @@
 
 FROM python:3.7-slim
 RUN apt-get update -qqy && \
-	apt-get -qqy install wget g++ && \
-	rm -rf /var/lib/apt/lists/*
+        apt-get -qqy install wget g++ && \
+        rm -rf /var/lib/apt/lists/*
 # show python logs as they occur
 ENV PYTHONUNBUFFERED=0
 
@@ -30,7 +30,11 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 # LightStep Instrumentation
+#RUN pip install --use-feature=2020-resolver opentelemetry-launcher
 RUN pip install opentelemetry-launcher
+#RUN opentelemetry-bootstrap --action=install 
+
+ENV PYTHONHTTPSVERIFY=0
 
 # add files into working directory
 COPY . .
