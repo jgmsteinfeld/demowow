@@ -43,6 +43,7 @@ RUN GRPC_HEALTH_PROBE_VERSION=v0.3.6 && \
 
 # LightStep Instrumentation
 RUN pip install opentelemetry-launcher
+RUN opentelemetry-bootstrap -a install
 
 WORKDIR /email_server
 
