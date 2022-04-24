@@ -32,7 +32,8 @@ sudo sed -i 's/ssh_pwauth:   false/ssh_pwauth:  true/g' /etc/cloud/cloud.cfg
 
 # Create demowow user (Do as Root)
 sudo adduser -m -g wheel  demowow
-echo "D3m0w0w1" | sudo passwd demowow --stdin
+#echo "D3m0w0w1" | sudo passwd demowow --stdin
+echo $1 | sudo passwd demowow --stdin
 
 # Crete Wetty service file
 cat << EOF | sudo tee /etc/systemd/system/wetty.service > /dev/null
