@@ -1,10 +1,10 @@
 #/bin/bash
 
 fs="falcon-sensor-6.37.0-13402.el7.x86_64.rpm"
-rhel=`rpm -E %{rhel}`
-if [ $rhel == 7 ]; then
-   wget -O $fs https://surf.service-now.com/sys_attachment.do?sys_id=da090311db664910b0b75ac2ca96197a 
-fi
+#rhel=`rpm -E %{rhel}`
+#if [ $rhel == 7 ]; then
+#   wget -O $fs https://surf.service-now.com/sys_attachment.do?sys_id=da090311db664910b0b75ac2ca96197a 
+$fi
 
 sudo yum install ./$fs -y
 sleep 5
