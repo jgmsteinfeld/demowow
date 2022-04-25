@@ -5,7 +5,7 @@ if [ "$1" == "" ]; then
        echo "Usage: $0 <demowow password>" 1>&2; exit 1;
 fi
 
-export psswd = $1
+export psswd=$1
 
 #Install Minikube
 curl -LO https://storage.googleapis.com/minikube/releases/v1.22.0/minikube-linux-amd64
@@ -53,7 +53,7 @@ rm -rf demowow-1.6.4
 /home/ec2-user/install_falcon_agent.sh
 
 #Install Wetty
-sudo /home/ec2-user/install_wetty.sh $1
+sudo /home/ec2-user/install_wetty.sh $psswd
 
 #Setup Crontab Entries to keep disk clean
 (sudo crontab -l 2>/dev/null; echo "*30 * * * * /home/ec2-user/clear_logs.sh") | sudo crontab -
