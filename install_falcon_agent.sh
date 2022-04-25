@@ -1,4 +1,5 @@
 #/bin/bash
+
 fs = falcon-sensor-6.37.0-13402.el7.x86_64.rpm
 rhel=`rpm -E %{rhel}`
 if [ $rhel == 7 ]; then
